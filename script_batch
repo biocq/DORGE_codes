@@ -1,0 +1,69 @@
+echo "Generating Figures and tables, please be patient, < 2 min"
+cd Figure_1
+echo "Generating Figures 1 and S1"
+Rscript Fig1_AB_code.R > /dev/null
+Rscript Fig1_C-I_S1A-K_S1M_code.R > /dev/null
+Rscript FigS1_L_and_N_code.R > /dev/null
+cd ..
+cd Figure_2
+echo "Generating Figures 2 and S2"
+Rscript Fig2_ADE_code.R > /dev/null
+Rscript Fig2_BC_code.R > /dev/null
+Rscript Fig2_F.R > /dev/null
+Rscript Fig2_G_and_FigS3_ABC_code.R > /dev/null
+Rscript Fig2_HI_data_file_S1_code.R > /dev/null
+Rscript FigS2_code.R > /dev/null
+cd ..
+cd Figure_3
+echo "Generating Figures 3 and S3"
+Rscript Fig3_AB_code.R > /dev/null
+Rscript Fig3_CE_code.R > /dev/null
+Rscript Fig3_D_and_FigS3_D_code.R > /dev/null
+Rscript Fig3_F_Fig_S3_E_code.R > /dev/null
+Rscript FigS3_FGH_code.R > /dev/null
+cd ..
+cd Figure_4
+echo "Generating Figures 4 and S4"
+Rscript Fig4_AE_FigS4_C-F.R > /dev/null
+Rscript Fig4_BC_code.R > /dev/null
+Rscript Fig4_D_S4_AB_code.R > /dev/null
+Rscript Fig4_F_code.R > /dev/null
+cd ..
+cd Figure_5
+echo "Generating Figures 5 and S5-7"
+Rscript Fig5_AB_code > /dev/null
+Rscript Fig5_CD_code.R > /dev/null
+Rscript Fig5_EF_code.R > /dev/null
+Rscript FigS5_ABC_code.R > /dev/null
+Rscript FigS5_D_code > /dev/null
+Rscript FigS5_EF_code.R > /dev/null
+Rscript FigS6_S7_code.R > /dev/null
+cd ..
+
+cd Tables
+cd Data_file_S1
+echo "Data file S1: Generating feature correlation table"
+Rscript Feature_correlation_code.R > /dev/null
+echo "Data file S1: Generating drug perturbation table"
+Rscript DGB_data_format_code.R > /dev/null
+
+cd ..
+cd Data_file_S2
+echo "Generating training feature set"
+Rscript feature_subset_generation.R > /dev/null
+echo "Data file S1: Formatting prediction result"
+Rscript DORGE_prediction_format_code.R > /dev/null
+echo "Data file S2: Evaluating different approaches for predicting TSG/OGs based on CGC genes"
+javac github_prediction_TSGOG_evaluation.java
+java github_prediction_TSGOG_evaluation
+echo "Data file S2: Evaluating different approaches for predicting cancer driver genes based on OncoKB genes"
+javac github_prediction_driver_evaluation_on_OncoKB.java
+java github_prediction_driver_evaluation_on_OncoKB
+cd ..
+
+cd Table_1
+echo "Table 1: Evaluating different approaches for predicting cancer driver genes based on CGC genes"
+javac github_prediction_driver_evaluation.java
+java github_prediction_driver_evaluation
+cd ..
+cd ..
