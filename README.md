@@ -38,42 +38,42 @@ Option 4. Batch mode
 We also provide a convenient executable script (script_batch) for running R codes in a batch mode. Please set permission (i.e. chmod a+x script_batch) before excecuting it.
 
 ### Layout of the website
-
-	 |-Figure_1
-   |---Raw_figures                        Unprocessed raw figures related to Figure 1 and Figure S1
-   |---data					                      Processed data used for figure generation
-   |---Figure_1.pdf                       Assembled Figure 1
-   |---Figure S1 related to Figure 1.pdf  Assembled Figure S1
-   |-Figure_2
-   |---Raw_figures                        Unprocessed raw figures related to Figure 2 and Figure S2
-   |---data					                      Processed data used for figure generation
-   |---Figure_2.pdf                       Assembled Figure 2
-   |---Figure S2 related to Figure 2.pdf  Assembled Figure S2
-   |-Figure_3
-   |---Raw_figures                        Unprocessed raw figures related to Figure 3 and Figure S3
-   |---data					                      Processed data used for figure generation
-   |---Figure_3.pdf                       Assembled Figure 3
-   |---Figure S3 related to Figure 3.pdf  Assembled Figure S3
-   |-Figure_4
-   |---Raw_figures                        Unprocessed raw figures related to Figure 4 and Figure S4
-   |---data					                      Processed data used for figure generation
-   |---Figure_4.pdf                       Assembled Figure 4
-   |---Figure S4 related to Figure 4.pdf  Assembled Figure S4
-   |-Figure_5
-   |---Raw_figures                        Unprocessed raw figures related to Figure 5 and Figure S5-S7
-   |---data					                      Processed data used for figure generation
-   |---Figure_5.pdf                       Assembled Figure 5
-   |---Figure S5 related to Figure 5.pdf  Assembled Figure S5
-   |---Figure S6 related to Figure 5.pdf  Rearranged Figure S6
-   |---Figure S7 related to Figure 5.pdf  Rearranged Figure S7
-   |-Tables
-   |---Data_file_S1                       Unprocessed raw tables that are used to make the final Data file S1
-   |---Data_file_S2                       Unprocessed raw tables that are used to make the final Data file S2
-   |---Table_1                            Unprocessed raw table of Table 1
-   script_batch				                    A convenient executable script (script_batch) for running R codes in a batch mode
-   Gene_set_new.txt		                    Gene annotation file through the paper
-   DORGE_prediction.txt                   DORGE prediction results
-   All_features.csv                       The feature profile
+<br/>
+|-Figure_1<br/>
+ |---Raw_figures                        Unprocessed raw figures related to Figure 1 and Figure S1<br/>
+ |---data					                      Processed data used for figure generation<br/>
+ |---Figure_1.pdf                       Assembled Figure 1<br/>
+ |---Figure S1 related to Figure 1.pdf  Assembled Figure S1<br/>
+|-Figure_2<br/>
+ |---Raw_figures                        Unprocessed raw figures related to Figure 2 and Figure S2<br/>
+ |---data					                      Processed data used for figure generation<br/>
+ |---Figure_2.pdf                       Assembled Figure 2<br/>
+ |---Figure S2 related to Figure 2.pdf  Assembled Figure S2<br/>
+|-Figure_3<br/>
+ |---Raw_figures                        Unprocessed raw figures related to Figure 3 and Figure S3<br/>
+ |---data					                      Processed data used for figure generation<br/>
+ |---Figure_3.pdf                       Assembled Figure 3<br/>
+ |---Figure S3 related to Figure 3.pdf  Assembled Figure S3<br/>
+|-Figure_4<br/>
+ |---Raw_figures                        Unprocessed raw figures related to Figure 4 and Figure S4<br/>
+ |---data					                      Processed data used for figure generation<br/>
+ |---Figure_4.pdf                       Assembled Figure 4<br/>
+ |---Figure S4 related to Figure 4.pdf  Assembled Figure S4<br/>
+|-Figure_5<br/>
+ |---Raw_figures                        Unprocessed raw figures related to Figure 5 and Figure S5-S7<br/>
+ |---data					                      Processed data used for figure generation<br/>
+ |---Figure_5.pdf                       Assembled Figure 5<br/>
+ |---Figure S5 related to Figure 5.pdf  Assembled Figure S5<br/>
+ |---Figure S6 related to Figure 5.pdf  Rearranged Figure S6<br/>
+ |---Figure S7 related to Figure 5.pdf  Rearranged Figure S7<br/>
+|-Tables<br/>
+ |---Data_file_S1                       Unprocessed raw tables that are used to make the final Data file S1<br/>
+ |---Data_file_S2                       Unprocessed raw tables that are used to make the final Data file S2<br/>
+ |---Table_1                            Unprocessed raw table of Table 1<br/>
+script_batch				                    A convenient executable script (script_batch) for running R codes in a batch mode<br/>
+Gene_set_new.txt		                    Gene annotation file through the paper<br/>
+DORGE_prediction.txt                    DORGE prediction results<br/>
+All_features.csv                        The feature profile<br/>
 
 ## Citation
 
