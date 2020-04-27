@@ -10,10 +10,10 @@
 ###### Input: data/Human_TSGs_curated.txt: TSG gene list downloaded from TSGene database
 ###### Input: data/Human_OGs_curated.txt: OG gene list downloaded from ONGene database
 ###### Input: data/cancermine.txt: TSG and OG gene list downloaded from CancerMine database
-###### Input: ../Figure_1/data/genebody_canyon_genes.txt: Gene-body canyon gene list
+###### Input: ../Figure_1/data/genebody_canyon_genes.txt: Compiled gene-body canyon genes from Canyon_with_genebody_processed.bed at Epigenetics_processing folder from the DORGE_pipeline project https://github.com/biocq/DORGE_pipeline
+
 ###### Output: ../Tables/Data_file_S1/Top_literature_untouched_TSG_info.txt (Data File S1): DORGE-predicted non-CGC-TSGs and related information
 ###### Output: ../Tables/Data_file_S1/Top_literature_untouched_OG_info.txt (Data File S1): DORGE-predicted non-CGC-OGs and related information
-
 ###### Output: Figure_2H_leftpanel.pdf,Figure_2H_rightpanel.pdf: Characterization of top 15 novel predicted genes
 ###### Output: Figure_2I_leftpanel.pdf,Figure_2I_rightpanel.pdf: Characterization of top 15 novel predicted genes that are undocumented in cancer driver gene databases
 

@@ -6,8 +6,8 @@
 
 ###### Input: ../All_features.csv: Feature table compiled in this study
 ###### Input: ../DORGE_prediction.txt: DORGE prediction results
-###### Input: data/ER_genes.txt: Epigenetic regulator (ER) gene set (Compiled from https://genome.cshlp.org/content/29/4/532.long and https://academic.oup.com/database/article/doi/10.1093/database/bav067/2433200)
-###### Input: data/driver-table.txt: Sleeping Beauty (SB) gene set from Sleeping Beauty Cancer Driver Database (SBCDDB) ( https://pubmed.ncbi.nlm.nih.gov/23770567/)
+###### Input: data/ER_genes.txt: Epigenetic regulator (ER) gene set (Compiled from https://genome.cshlp.org/content/29/4/532.long and https://academic.oup.com/database/article/doi/10.1093/database/bav067/2433200; Available at Evaluation_processing folder DORGE_pipeline project https://github.com/biocq/DORGE_pipeline)
+###### Input: data/driver-table.txt: Sleeping Beauty (SB) gene set from Sleeping Beauty Cancer Driver Database (SBCDDB) (https://pubmed.ncbi.nlm.nih.gov/23770567/; Available at Evaluation_processing folder DORGE_pipeline project https://github.com/biocq/DORGE_pipeline)
 
 ###### Output: Figure_4B_ER_enrichment.pdf: Enrichment of ERs in different gene categories 
 ###### Output: Figure_4C_SB_enrichment.pdf: Enrichment of SBs in different gene categories

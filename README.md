@@ -1,9 +1,9 @@
-## Codes used in the DORGE paper
+# Codes used in the DORGE paper
 ![image](https://github.com/biocq/DORGE/blob/master/DORGE_logo.svg)
 ### Codes for reproducing the results of the paper
 Codes and necessary data used in the DORGE paper for generating figures and tables are available at this website.
 
-### Dependency
+## Dependency
 
 R (https://cran.r-project.org/)
 
@@ -15,7 +15,7 @@ Sun Java SE Development Kit 7 or higher (https://www.oracle.com/java/technologie
 
 Bioconda users may also try 'conda install -c bioconda java-jdk' to install Java easily.
 
-### Usages
+## Usages
 
 Take Fig1_AB_code.R in folder Figure_1 for an example.
 
@@ -37,7 +37,7 @@ Option 4. Batch mode
 
 We also provide a convenient executable script (script_batch) for running R codes in a batch mode. Please set permission (i.e. chmod a+x script_batch) before executing it.
 
-### Layout of the website
+## Layout of the website
 <br/>
 |-Figure_1<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---Raw_figures                        Unprocessed raw figures related to Figure 1 and Figure S1<br/>
@@ -81,9 +81,7 @@ Please cite the paper (DORGE: Discovery of Oncogenes and Tumor SuppressoR Genes 
 
 
 ## Changelog
-
 *  April 4. Update the README page.
-
 *  April 25. Update the codes.
 
 ## Issues

@@ -7,7 +7,7 @@
 ###### Input: ../Gene_set_new.txt: Gene annotation file
 ###### Input: ../All_features.csv: Feature table compiled in this study
 ###### Input: ../DORGE_prediction.txt: DORGE prediction results
-###### Input: data/oncolnc_processed.txt: Processed survival data (from https://peerj.com/articles/cs-67/)
+###### Input: data/oncolnc_processed.txt: Processed survival data (from https://peerj.com/articles/cs-67/; Available at Evaluation_processing folder DORGE_pipeline project https://github.com/biocq/DORGE_pipeline)
 
 ###### Output: Figure_4D_survival_READ_evaluation.pdf: Evaluation of DORGE novel TSG/OGs by survival data in READ
 ###### Output: Figure_S4A_survival_COAD_evaluation.pdf: Evaluation of DORGE novel TSG/OGs by survival data in COAD

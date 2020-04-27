@@ -7,7 +7,7 @@
 ###### Input: ../Gene_set_new.txt: Gene annotation file
 ###### Input: ../All_features.csv: Feature table compiled in this study
 ###### Input: ../DORGE_prediction.txt: DORGE prediction results
-###### Input: data/BioGRID_network_node_metrics_processed.txt:  Network metrics calculated by Cytoscape (https://cytoscape.org/)
+###### Input: data/BioGRID_network_node_metrics_processed.txt:  Network metrics calculated by Cytoscape (https://cytoscape.org/; Available at Evaluation_processing folder DORGE_pipeline project https://github.com/biocq/DORGE_pipeline)
 
 ###### Output: Figure_S5A_BioGRID_log_degree.pdf: Evaluation of dual-function TSG/OGs by PPI network degree
 ###### Output: Figure_S5B_BioGRID_betweenness.pdf: Evaluation of dual-function TSG/OGs by PPI network betweenness centrality

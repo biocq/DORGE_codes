@@ -5,6 +5,7 @@
 ###### The boxplots for different gene categories to show the distribution of top-ranking features used in DORGE-TSG prediction.
 ###### Input: ../All_features.csv: Feature table compiled in this study
 ###### Input: ../DORGE_prediction.txt: DORGE prediction results
+###### Input: data/genebody_canyon_genes.txt: Compiled gene-body canyon genes from Canyon_with_genebody_processed.bed at Epigenetics_processing folder from the DORGE_pipeline project https://github.com/biocq/DORGE_pipeline
 ###### Output: Figure_1C_H3K4me3_peak_length.pdf: Box plots showing the distribution of tri-methylation on histone H3 lysine 4 (H3K4me3) mean peak length among CGC-OG, CGC-TSG, and neutral gene (NG) sets
 ###### Output: Figure_1D_VEST_score.pdf: Box plots showing the distribution of Variant Effect Scoring Tool (VEST) score among CGC-OG, CGC-TSG, and neutral gene (NG) sets
 ###### Output: Figure_1E_Missense_damaging_benign_ratio.pdf: Box plots showing the distribution of missense damaging/benign ratio among CGC-OG, CGC-TSG, and neutral gene (NG) sets

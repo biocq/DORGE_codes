@@ -5,7 +5,7 @@
 ###### The gene enrichment analyses for different gene categories to independently evaluate DORGE prediction.
 
 ###### Input: ../DORGE_prediction.txt: DORGE prediction results
-###### Input: data/Phyletic/ Eukaryota_4.txt, Metazoa_3.txt, Chordata_2.txt, Mammalia_1.txt are processed Phyletic age gene lists (gene age) downloaded from Online GEne Essentiality (OGEE) database, only human records were analyzed
+###### Input: data/Phyletic/ Eukaryota_4.txt, Metazoa_3.txt, Chordata_2.txt, Mammalia_1.txt (Processed Phyletic age gene lists (gene age) downloaded from Online GEne Essentiality (OGEE) database, only human records were analyzed)
 ###### Output: Figure_4F_Phyletic_enrichment.pdf: Enrichment of different Phyletic age genes in different gene categories
 
 

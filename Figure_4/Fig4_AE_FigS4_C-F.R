@@ -7,10 +7,10 @@
 ###### Input: ../All_features.csv: Feature table compiled in this study
 ###### Input: ../DORGE_prediction.txt: DORGE prediction results
 ###### Input: sampled_NGs.txt: Sampled 2,000 NGs for reproducing purpose
-###### Input: data/pan_cancer_ATACseq_peaks_processed.txt: ATAC-seq pan-cancer data (Data S2 of https://science.sciencemag.org/content/362/6413/eaav1898)
-###### Input: data/Noncoding_mutation_rate_processed.txt: noncoding mutation rate data (from Supplementary Tables of https://www.nature.com/articles/nature12213)
-###### Input: data/shRNA_cell_proliferation_rates.txt: DepMap shRNA screening data data (Achilles v2.4.6)
-###### Input: data/phyloP46_processed.txt: phyloP data downloaded from UCSC
+###### Input: data/pan_cancer_ATACseq_peaks_processed.txt: ATAC-seq pan-cancer data (Data S2 of https://science.sciencemag.org/content/362/6413/eaav1898; Available at Evaluation_processing folder from the DORGE_pipeline project https://github.com/biocq/DORGE_pipeline)
+###### Input: data/Noncoding_mutation_rate_processed.txt: noncoding mutation rate data (Processed based on Table S5 of https://www.nature.com/articles/nature12213; Available at Evaluation_processing folder from the DORGE_pipeline project https://github.com/biocq/DORGE_pipeline)
+###### Input: data/shRNA_cell_proliferation_rates.txt: DepMap shRNA screening data data (Achilles v2.4.5; Available at Evaluation_processing folder from the DORGE_pipeline project https://github.com/biocq/DORGE_pipeline)
+###### Input: data/phyloP46_processed.txt: phyloP data downloaded from UCSC (Available at Evaluation_processing folder from the DORGE_pipeline project https://github.com/biocq/DORGE_pipeline)
 
 ###### Output: Figure_4A_ATAC_seq_evaluation.pdf: Evaluation of DORGE novel TSG/OGs by ATAC-seq data
 ###### Output: Figure_S4F_noncoding_mutation_evaluation.pdf:  Evaluation of DORGE novel TSG/OGs by noncoding mutation rate data

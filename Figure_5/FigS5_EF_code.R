@@ -7,7 +7,7 @@
 ###### Input: ../Gene_set_new.txt: Gene annotation file
 ###### Input: ../All_features.csv: Feature table compiled in this study
 ###### Input: ../DORGE_prediction.txt: DORGE prediction results
-###### Input: data/gene_degree_pharmacodb.txt: Degree metric calculated based on PharmacoDB data
+###### Input: data/gene_degree_pharmacodb.txt: Degree metric calculated based on PharmacoDB data (Available at Evaluation_processing folder DORGE_pipeline project https://github.com/biocq/DORGE_pipeline)
 
 ###### Output: Figure_S5E_pharmacodb_log_degree.pdf: Evaluation of CGC and DORGE-predicted dual-function TSG/OGs by Pharmacodb network degree
 ###### Output: Figure_S5F_drug_degree.pdf: Top 10 drugs/compounds that are most associated with genes in Pharmacodb

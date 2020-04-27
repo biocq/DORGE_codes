@@ -8,9 +8,9 @@
 ###### Input: ../All_features.csv: Feature table compiled in this study
 ###### Input: ../DORGE_prediction.txt: DORGE prediction results
 ###### Input: data/ER_genes.txt: Epigenetic regulator (ER) gene set (Compiled from https://genome.cshlp.org/content/29/4/532.long and https://academic.oup.com/database/article/doi/10.1093/database/bav067/2433200)
-###### Input: data/gene_essentiality/ essential_genes.txt and non_essential_genes.txt: Essential and non-essential gene lists (from OGEE database)
-###### Input: data/drug_gene_nr.txt: nonredundant durg-gene relationship compiled from PharmacoDB database (https://academic.oup.com/nar/article/46/D1/D994/4372597)
-###### Input: data/Network_metrics_prioritized_CGC_NG.txt: Network metrics calculated by Cytoscape (https://cytoscape.org/)
+###### Input: data/gene_essentiality/ essential_genes.txt and non_essential_genes.txt: Essential and non-essential gene lists (from OGEE database; Available at Evaluation_processing folder DORGE_pipeline project https://github.com/biocq/DORGE_pipeline)
+###### Input: data/drug_gene_nr.txt: nonredundant durg-gene relationship compiled from PharmacoDB database (https://academic.oup.com/nar/article/46/D1/D994/4372597; Available at Evaluation_processing folder DORGE_pipeline project https://github.com/biocq/DORGE_pipeline)
+###### Input: data/gene_degree_pharmacodb.txt: Network metrics calculated by Cytoscape (https://cytoscape.org/)
 ###### Input: data/genebody_canyon_genes.txt: Gene-body canyon genes (Compiled from https://genomebiology.biomedcentral.com/articles/10.1186/s13059-018-1492-3)
 ###### Input: data/genebody_differential_methyl_COSMIC.txt (Gene-body methylation data in cancer and normal samples compiled from the v90 methylation data in COSMIC website)
 ###### Input: data/HKG_processed.txt: Housekeeping gene (HKG) list that was downloaded from https://www.tau.ac.il/~elieis/HKG/

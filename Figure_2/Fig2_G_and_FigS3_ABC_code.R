@@ -2,16 +2,14 @@
 ######## Heatmaps and scatterplots ########
 ###########################################
 
-###### The DORGE-predicted novel TSGs and OGs are enriched in KEGG pathways. Besides, the DORGE-predicted novel TSGs and OGs using Epigenetic features only are also enriched in KEGG pathways. The difference is quantified by scatterplots.
+###### The DORGE-predicted novel TSGs and OGs are enriched in specific terms of KEGG pathways (Figure_2G). Besides, the DORGE-predicted TSGs and OGs using non-Epigenetic features are also enriched in specific terms of KEGG pathways (Figure_S3A). The difference is quantified by scatterplots Figure_S3B,C.
 
 ###### Input: data/KEGG_2019_Human_table_novel_TSGs.txt: Enrichr "KEGG 2019 human" results using all DORGE-predict novel non-CGC TSGs
 ###### Input: data/KEGG_2019_Human_table_novel_OGs.txt: Enrichr "KEGG 2019 human" results using all DORGE-predict novel non-CGC OGs
-###### Input: data/KEGG_2019_Human_table_epi_benefit_TSG.txt: Enrichr input: Gene list of TSG prediction using all features while excluding those without epigenetic features
-###### Input: data/KEGG_2019_Human_table_epi_benefit_OG.txt:  Enrichr input: Gene list of OG prediction using all features while excluding those without epigenetic features
-###### Input: data/KEGG_2019_Human_table_epi_benefit_TSG.txt: Enrichr "KEGG 2019" results using predicted novel TSGs based on all features while excluding those without epigenetic features
-###### Input: data/KEGG_2019_Human_table_epi_benefit_OG.txt: Enrichr "KEGG 2019" results using all DORGE-predict novel OGs based on all features while excluding those without epigenetic features
+###### Input: data/KEGG_2019_Human_table_epi_benefit_TSG.txt: Enrichr "KEGG 2019" results using  all DORGE-predicted novel TSGs based on all features while excluding those without epigenetic features
+###### Input: data/KEGG_2019_Human_table_epi_benefit_OG.txt: Enrichr "KEGG 2019" results using all DORGE-predicted novel OGs based on all features while excluding those without epigenetic features
 
-###### Output: Figure_2F_KEGG_novelTSGOG.pdf: KEGG pathway enrichment using Enrichr for all DORGE-predict novel non-CGC TSG/OGs
+###### Output: Figure_2G_KEGG_novelTSGOG.pdf: KEGG pathway enrichment using Enrichr for all DORGE-predict novel non-CGC TSG/OGs
 ###### Output: Figure_S3A_KEGG_benefited_by_epigenetics_novelTSGOG.pdf:  KEGG pathway enrichment using Enrichr for DORGE-predict novel TSG/OGs predicted by Epigenetics features only
 ###### Output: Figure_S3B_KEGG_correlation_TSG.pdf: Scatter plot comparing -log10(DORGE-TSG P-value) of KEGG pathway enrichment in Figure 2F and S4A
 ###### Output: Figure_S3C_KEGG_correlation_OG.pdf:  Scatter plot comparing -log10(DORGE-OG P-value) of KEGG pathway enrichment in Figure 2F and S4A
@@ -46,7 +44,7 @@ OG_threshold<-0.7004394 #loose FPR=0.01
 #TSG_threshold<-0.8290429 #strict FPR=0.005
 #OG_threshold<-0.8679444 #strict FPR=0.005
 
-################################## Figure 2F ###############################
+################################## Figure 2G ###############################
 
 #setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_2");
 KEGG_TSG <- read.table("data/KEGG_2019_Human_table_novel_TSGs.txt", header=T, sep="\t")

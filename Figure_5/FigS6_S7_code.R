@@ -4,6 +4,7 @@
 
 ###### Heatmap of fold changes in expression for DORGE-predicted TSG/OGs that are upregulated or downregulated by drug perturbations.
 
+###### Input data are available at Evaluation_processing folder DORGE_pipeline project https://github.com/biocq/DORGE_pipeline
 ###### Input: data/DGB/DGB_creeds_downregulated_simplified.txt: Processed data including fold changes in expression for DORGE-predicted OGs (excluding CGC dual genes and DORGE-predicted dual genes) that are downregulated by drug perturbations from the CRowd Extracted Expression of Differential Signatures (CREEDS) collection in the Drug Gene Budger (DGB) web portal. Only most signficant drugs and genes are shown due to the limitation of the space.
 ###### Input: data/DGB/DGB_creeds_upregulated_simplified.txt: Processed data including fold changes in expression for DORGE-predicted TSG (excluding CGC dual genes and DORGE-predicted dual genes) that are upregulated by drug perturbations from the CRowd Extracted Expression of Differential Signatures (CREEDS) collection in the Drug Gene Budger (DGB) web portal. Only most signficant drugs and genes are shown due to the limitation of the space.
 ###### Input: data/DGB/DGB_CMap_downregulated_simplified.txt: Processed data including fold changes in expression for DORGE-predicted OGs (excluding CGC dual genes and DORGE-predicted dual genes) that are downregulated by drug perturbations from the Connectivity Map (CMap) collection in the Drug Gene Budger (DGB) web portal. Only most signficant drugs and genes are shown due to the limitation of the space.
