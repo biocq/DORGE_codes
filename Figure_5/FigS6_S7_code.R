@@ -41,7 +41,7 @@ suppressMessages(library("reshape2"))
 
 ############################# Figure S6 Heatmap of compound-gene heatmap based on CREEDS data #########################
 
-myFUN<- function(x) {
+nonzero<- function(x) {
    length(x[x!=0])
 }
 plus<- function(x) {
@@ -51,7 +51,7 @@ minus<- function(x) {
    length(x[x<0])
 }
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_5");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_5");
 creeds_dataset <- read.table("data/DGB/DGB_creeds_downregulated_simplified.txt", header=T, sep="\t",quote = "")
 creeds_dataset2 <- read.table("data/DGB/DGB_creeds_upregulated_simplified.txt", header=T, sep="\t",quote = "")
 creeds_dat<-rbind(creeds_dataset,creeds_dataset2)
@@ -73,13 +73,13 @@ dat_plot<-as.matrix(dat_plot[,-1])
 dat_plot[is.nan(dat_plot)] <- 0
 
 dat_plot<-dat_plot[order(Gene_type),]
-count<-as.numeric(apply(dat_plot,1,FUN=myFUN))#Gene
+count<-as.numeric(apply(dat_plot,1,FUN=nonzero))#Gene
 Gene_type<-Gene_type[order(Gene_type)]
 rowselect<-which(count>6)
 Gene_type<-Gene_type[rowselect]
 dat_plot<-dat_plot[rowselect,]
 
-count<-as.numeric(apply(dat_plot,2,FUN=myFUN))#Drug
+count<-as.numeric(apply(dat_plot,2,FUN=nonzero))#Drug
 colselect<-which(count>2)
 colnames(dat_plot)<-capitalize(colnames(dat_plot))
 
@@ -100,7 +100,7 @@ garbage <- dev.off()
 
 ############################# Figure S7 Heatmap of compound-gene heatmap based on CMap data #########################
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_5");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_5");
 CMap_dataset <- read.table("data/DGB/DGB_CMap_downregulated_simplified.txt", header=T, sep="\t",quote = "")
 CMap_dataset2 <- read.table("data/DGB/DGB_CMap_upregulated_simplified.txt", header=T, sep="\t",quote = "")
 CMap_dat<-rbind(CMap_dataset,CMap_dataset2)
@@ -122,13 +122,13 @@ dat_plot<-as.matrix(dat_plot[,-1])
 dat_plot[is.nan(dat_plot)] <- 0
 
 dat_plot<-dat_plot[order(Gene_type),]
-count<-as.numeric(apply(dat_plot,1,FUN=myFUN))#Gene
+count<-as.numeric(apply(dat_plot,1,FUN=nonzero))#Gene
 Gene_type<-Gene_type[order(Gene_type)]
 rowselect<-which(count>2)
 Gene_type<-Gene_type[rowselect]
 dat_plot<-dat_plot[rowselect,]
 
-count<-as.numeric(apply(dat_plot,2,FUN=myFUN))#Drug
+count<-as.numeric(apply(dat_plot,2,FUN=nonzero))#Drug
 #dat_plot<-dat_plot[,rev(order(as.numeric(count)))]
 colselect<-which(count>1)
 colnames(dat_plot)<-capitalize(colnames(dat_plot))

@@ -44,7 +44,7 @@ suppressMessages(library("scales"))
 
 ################## H3K4me3 peak length ################
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_1");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_1");
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
 all_feature <- read.table("../All_features.csv", header=T, sep=",",fill=TRUE,quote = "")
@@ -66,15 +66,16 @@ index[index_TSG]<-"CGC-TSG"
 allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
 
-my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))
+
 pdf("Raw_figures/Figure_1C_H3K4me3_peak_length.pdf", family="ArialMT", width=1.6, height=3)
+my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))
 ggboxplot(data = allgene2,x = "index", y="H3K4me3_peak_length",color="black",outlier.size = 0.2,width=0.7, fill="index",lwd=0.25,palette = c("#E41A1C","#377EB8","#CCCCCC"))+  scale_y_continuous(breaks = c(0,2000,4000,6000),labels = c("0", "2000", "4000", "12000"))+ labs(x = "", y = "H3K4me3 peak length") + theme_bw() + theme(axis.ticks.y = element_line(size = 0.5),axis.ticks.x=element_blank(),axis.text.x = element_text(angle = 30, hjust = 1, colour = "black"),axis.text.y = element_text(angle = 90, hjust = 0.5, colour = "black"), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))+ guides(fill=FALSE)+stat_compare_means(aes(label = paste0(..p.format..)),method.args = list(alternative = "g"),comparisons = my_comparisons,size=2.5)
 garbage <- dev.off()
 
 
 ################## H3K4me3 peak height ################
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_1");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_1");
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
 all_feature <- read.table("../All_features.csv", header=T, sep=",",fill=TRUE,quote = "")
@@ -96,15 +97,16 @@ index[index_TSG]<-"CGC-TSG"
 allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
 
-my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))
+
 pdf("Raw_figures/Figure_S1A_Height_of_H3K4me3_peaks.pdf", family="ArialMT", width=1.6, height=3)
+my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))
 ggboxplot(data = allgene2,x = "index", y="Height_of_H3K4me3_peaks",color="black",outlier.size = 0.2,width=0.7, fill="index",lwd=0.25,palette = c("#E41A1C","#377EB8","#CCCCCC"))+  scale_y_continuous(breaks = c(0,500,1000,1200),labels = c("0", "500", "1000","3000"))+ labs(x = "", y = "H3K4me3 peak height") + theme_bw() + theme(axis.ticks.y = element_line(size = 0.5),axis.ticks.x=element_blank(),axis.text.x = element_text(angle = 30, hjust = 1, colour = "black"),axis.text.y = element_text(angle = 90, hjust = 0.5, colour = "black"), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))+ guides(fill=FALSE)+stat_compare_means(aes(label = paste0(..p.format..)),method.args = list(alternative = "g"),comparisons = my_comparisons,size=2.5)
 garbage <- dev.off()
 
 
 ################# H3K79me2 peak length #################
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_1");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_1");
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
 all_feature <- read.table("../All_features.csv", header=T, sep=",",fill=TRUE,quote = "")
@@ -126,15 +128,14 @@ index[index_TSG]<-"CGC-TSG"
 allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
 
-my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))
 pdf("Raw_figures/Figure_S1B_H3K79me2_peak_length.pdf", family="ArialMT", width=1.6, height=3)
-ggboxplot(data = allgene2,x = "index", y="H3K79me2_peak_length",color="black",outlier.size = 0.2,width=0.7, fill="index",lwd=0.25,palette = c("#E41A1C","#377EB8","#CCCCCC"))+  scale_y_continuous(breaks = c(0,2000,4000,6000),labels = c("0", "2000", "4000", "12000"))+ labs(x = "", y = "H3K79me2 peak length") + theme_bw() + theme(axis.ticks.y = element_line(size = 0.5),axis.ticks.x=element_blank(),axis.text.x = element_text(angle = 30, hjust = 1, colour = "black"),axis.text.y = element_text(angle = 90, hjust = 0.5, colour = "black"), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))+ guides(fill=FALSE)+stat_compare_means(aes(label = paste0(..p.format..)),method.args = list(alternative = "g"),comparisons = my_comparisons,size=2.5)
+my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))ggboxplot(data = allgene2,x = "index", y="H3K79me2_peak_length",color="black",outlier.size = 0.2,width=0.7, fill="index",lwd=0.25,palette = c("#E41A1C","#377EB8","#CCCCCC"))+  scale_y_continuous(breaks = c(0,2000,4000,6000),labels = c("0", "2000", "4000", "12000"))+ labs(x = "", y = "H3K79me2 peak length") + theme_bw() + theme(axis.ticks.y = element_line(size = 0.5),axis.ticks.x=element_blank(),axis.text.x = element_text(angle = 30, hjust = 1, colour = "black"),axis.text.y = element_text(angle = 90, hjust = 0.5, colour = "black"), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))+ guides(fill=FALSE)+stat_compare_means(aes(label = paste0(..p.format..)),method.args = list(alternative = "g"),comparisons = my_comparisons,size=2.5)
 garbage <- dev.off()
 
 
 ################## H3K79me2 peak height ################
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_1");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_1");
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
 all_feature <- read.table("../All_features.csv", header=T, sep=",",fill=TRUE,quote = "")
@@ -156,15 +157,16 @@ index[index_TSG]<-"CGC-TSG"
 allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
 
-my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))
+
 pdf("Raw_figures/Figure_S1C_Height_of_H3K79me2_peaks.pdf", family="ArialMT", width=1.6, height=3)
+my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))
 ggboxplot(data = allgene2,x = "index", y="Height_of_H3K79me2_peaks",color="black",outlier.size = 0.2,width=0.7, fill="index",lwd=0.25,palette = c("#E41A1C","#377EB8","#CCCCCC"))+  scale_y_continuous(breaks = c(0,20,40,50),labels = c("0", "20", "40","140"))+ labs(x = "", y = "H3K79me2 peak height") + theme_bw() + theme(axis.ticks.y = element_line(size = 0.5),axis.ticks.x=element_blank(),axis.text.x = element_text(angle = 30, hjust = 1, colour = "black"),axis.text.y = element_text(angle = 90, hjust = 0.5, colour = "black"), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))+ guides(fill=FALSE)+stat_compare_means(aes(label = paste0(..p.format..)),method.args = list(alternative = "g"),comparisons = my_comparisons,size=2.5)
 garbage <- dev.off()
 
 
 ################# H3K36me3 peak length #################
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_1");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_1");
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
 all_feature <- read.table("../All_features.csv", header=T, sep=",",fill=TRUE,quote = "")
@@ -186,14 +188,15 @@ index[index_TSG]<-"CGC-TSG"
 allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
 
-my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))
+
 pdf("Raw_figures/Figure_S1I_H3K36me3_peak_length.pdf", family="ArialMT", width=1.6, height=3)
+my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))
 ggboxplot(data = allgene2,x = "index", y="H3K36me3_peak_length",color="black",outlier.size = 0.2,width=0.7, fill="index",lwd=0.25,palette = c("#E41A1C","#377EB8","#CCCCCC"))+  scale_y_continuous(breaks = c(0,2000,4000,6000),labels = c("0", "2000", "4000", "12000"))+ labs(x = "", y = "H3K36me3 peak length") + theme_bw() + theme(axis.ticks.y = element_line(size = 0.5),axis.ticks.x=element_blank(),axis.text.x = element_text(angle = 30, hjust = 1, colour = "black"),axis.text.y = element_text(angle = 90, hjust = 0.5, colour = "black"), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))+ guides(fill=FALSE)+stat_compare_means(aes(label = paste0(..p.format..)),method.args = list(alternative = "g"),comparisons = my_comparisons,size=2.5)
 garbage <- dev.off()
 
 ################# H4K20me1 peak length #################
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_1");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_1");
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
 all_feature <- read.table("../All_features.csv", header=T, sep=",",fill=TRUE,quote = "")
@@ -215,14 +218,15 @@ index[index_TSG]<-"CGC-TSG"
 allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
 
-my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))
+
 pdf("Raw_figures/Figure_S1J_H4K20me1_peak_length.pdf", family="ArialMT", width=1.6, height=3)
+my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))
 ggboxplot(data = allgene2,x = "index", y="H4K20me1_peak_length",color="black",outlier.size = 0.2,width=0.7, fill="index",lwd=0.25,palette = c("#E41A1C","#377EB8","#CCCCCC"))+  scale_y_continuous(breaks = c(0,2000,4000,6000),labels = c("0", "2000", "4000", "12000"))+ labs(x = "", y = "H4K20me1 peak length") + theme_bw() + theme(axis.ticks.y = element_line(size = 0.5),axis.ticks.x=element_blank(),axis.text.x = element_text(angle = 30, hjust = 1, colour = "black"),axis.text.y = element_text(angle = 90, hjust = 0.5, colour = "black"), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))+ guides(fill=FALSE)+stat_compare_means(aes(label = paste0(..p.format..)),method.args = list(alternative = "g"),comparisons = my_comparisons,size=2.5)
 garbage <- dev.off()
 
 ################# H3K9ac peak length #################
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_1");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_1");
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
 all_feature <- read.table("../All_features.csv", header=T, sep=",",fill=TRUE,quote = "")
@@ -244,14 +248,15 @@ index[index_TSG]<-"CGC-TSG"
 allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
 
-my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))
+
 pdf("Raw_figures/Figure_S1K_H3K9ac_peak_length.pdf", family="ArialMT", width=1.6, height=3)
+my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))
 ggboxplot(data = allgene2,x = "index", y="H3K9ac_peak_length",color="black",outlier.size = 0.2,width=0.7, fill="index",lwd=0.25,palette = c("#E41A1C","#377EB8","#CCCCCC"))+  scale_y_continuous(breaks = c(0,2000,4000,6000),labels = c("0", "2000", "4000", "12000"))+ labs(x = "", y = "H3K9ac peak length") + theme_bw() + theme(axis.ticks.y = element_line(size = 0.5),axis.ticks.x=element_blank(),axis.text.x = element_text(angle = 30, hjust = 1, colour = "black"),axis.text.y = element_text(angle = 90, hjust = 0.5, colour = "black"), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))+ guides(fill=FALSE)+stat_compare_means(aes(label = paste0(..p.format..)),method.args = list(alternative = "g"),comparisons = my_comparisons,size=2.5)
 garbage <- dev.off()
 
 ################# VEST score #################
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_1");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_1");
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
 all_feature <- read.table("../All_features.csv", header=T, sep=",",fill=TRUE,quote = "")
@@ -278,7 +283,7 @@ garbage <- dev.off()
 
 ################# Exon conservation phastCons score #################
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_1");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_1");
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
 all_feature <- read.table("../All_features.csv", header=T, sep=",",fill=TRUE,quote = "")
@@ -305,7 +310,7 @@ garbage <- dev.off()
 
 
 ################# Gene-body differential hypermethylation at gene-body canyon genes #################
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_1");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_1");
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
 all_feature <- read.table("../All_features.csv", header=T, sep=",",fill=TRUE,quote = "")
@@ -340,7 +345,7 @@ ggboxplot(data = allgene2,x = "index", y="genebody_canyon_hypermethylation_diff"
 garbage <- dev.off()
 
 ################# Gene-body differential hypermethylation #################
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_1");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_1");
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
 all_feature <- read.table("../All_features.csv", header=T, sep=",",fill=TRUE,quote = "")
@@ -369,7 +374,7 @@ garbage <- dev.off()
 
 ################# Missense entropy #################
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_1");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_1");
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
 all_feature <- read.table("../All_features.csv", header=T, sep=",",fill=TRUE,quote = "")
@@ -409,6 +414,7 @@ modulus_trans <- function(lambda){
      }
    )
 }
+
 pdf("Raw_figures/Figure_1F_Missense_entropy.pdf", family="ArialMT", width=1.6, height=3)
 my_comparisons <- list(c("CGC-OG","NG"),c("CGC-TSG","NG"),c("CGC-OG","CGC-TSG"))
 ggboxplot(data = allgene2,x = "index", y="Missense_entropy",color="black",outlier.size = 0.2,width=0.7, fill="index",lwd=0.25,palette = c("#E41A1C","#377EB8","#CCCCCC"))+labs(x = "", y = "Missense entropy") + theme_bw() + theme(axis.ticks.y = element_line(size = 0.5),axis.ticks.x=element_blank(),axis.text.x = element_text(angle = 30, hjust = 1, colour = "black"),axis.text.y = element_text(angle = 90, hjust = 0.5, colour = "black"), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))+stat_compare_means(aes(label = paste0(..p.format..)),method.args = list(alternative = "g"),comparisons = my_comparisons,size=2.5)+ guides(fill=FALSE)+ scale_y_continuous(trans = modulus_trans(-0.7),breaks = c(0,0.2,0.6,1,4))
@@ -417,7 +423,7 @@ garbage <- dev.off()
 
 ################# Missense damaging/benign ratio #################
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_1");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_1");
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
 all_feature <- read.table("../All_features.csv", header=T, sep=",",fill=TRUE,quote = "")
@@ -449,7 +455,7 @@ garbage <- dev.off()
 
 ################# Super_enhancer_percentage #################
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_1");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_1");
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
 all_feature <- read.table("../All_features.csv", header=T, sep=",",fill=TRUE,quote = "")
@@ -479,7 +485,7 @@ garbage <- dev.off()
 
 ################# ncGERP score #################
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_1");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_1");
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
 all_feature <- read.table("../All_features.csv", header=T, sep=",",fill=TRUE,quote = "")
@@ -506,7 +512,7 @@ garbage <- dev.off()
 
 ################# PolyPhen-2 score #################
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_1");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_1");
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
 all_feature <- read.table("../All_features.csv", header=T, sep=",",fill=TRUE,quote = "")
@@ -534,7 +540,7 @@ garbage <- dev.off()
 
 ################# pLI score #################
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_1");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_1");
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
 all_feature <- read.table("../All_features.csv", header=T, sep=",",fill=TRUE,quote = "")
@@ -562,7 +568,7 @@ garbage <- dev.off()
 
 ################# LoF o/e constraint #################
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_1");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_1");
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
 all_feature <- read.table("../All_features.csv", header=T, sep=",",fill=TRUE,quote = "")
@@ -589,12 +595,11 @@ allgene2<-allgene[allgene$index!="",]
 
 pdf("Raw_figures/Figure_S1E_LoF_o_e_constraint.pdf", family="ArialMT", width=1.6, height=3)
 my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))
-
 ggboxplot(data = allgene2,x = "index", y="LoF_o_e_constraint",color="black",outlier.size = 0.2,width=0.7, fill="index",lwd=0.25,palette = c("#E41A1C","#377EB8","#CCCCCC"))+ labs(x = "", y = "LoF o/e constraint") + theme_bw() + theme(axis.ticks.y = element_line(size = 0.5),axis.ticks.x=element_blank(),axis.text.x = element_text(angle = 30, hjust = 1, colour = "black"),axis.text.y = element_text(angle = 90, hjust = 0.5, colour = "black"), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))+ guides(fill=FALSE)+stat_compare_means(aes(label = paste0(..p.format..)),method.args = list(alternative = "g"),comparisons = my_comparisons,size=2.5)+  scale_y_continuous(breaks = c(-2,0,2,4,8),labels = c("-2", "0", "2", "4", "8"))
 garbage <- dev.off()
 
 ################# NonSilent/silent ratio #################
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_1");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_1");
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
 all_feature <- read.table("../All_features.csv", header=T, sep=",",fill=TRUE,quote = "")
@@ -617,5 +622,6 @@ allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
 
 pdf("Raw_figures/Figure_S1D_NonSilent_silent_ratio.pdf", family="ArialMT", width=1.6, height=3)
+my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))
 ggboxplot(data = allgene2,x = "index", y="NonSilent_silent_ratio",color="black",outlier.size = 0.2,width=0.7, fill="index",lwd=0.25,palette = c("#E41A1C","#377EB8","#CCCCCC"))+ labs(x = "", y = "Non-silent/silent ratio") + theme_bw() + theme(axis.ticks.y = element_line(size = 0.5),axis.ticks.x=element_blank(),axis.text.x = element_text(angle = 30, hjust = 1, colour = "black"),axis.text.y = element_text(angle = 90, hjust = 0.5, colour = "black"), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))+ guides(fill=FALSE)+stat_compare_means(aes(label = paste0(..p.format..)),method.args = list(alternative = "g"),comparisons = my_comparisons,size=2.5)+ scale_y_continuous(breaks = c(0,1,3,5,5.9,7.95),labels = c("0", "1", "3", "5", "100","300"))
 garbage <- dev.off()

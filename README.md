@@ -5,15 +5,17 @@ Codes and necessary data used in the DORGE paper for generating figures and tabl
 
 ## Dependency
 
-R (https://cran.r-project.org/)
-
-Java (Optional if only you are only interested in regenerating figures)
+*  R (https://cran.r-project.org/)
 
 Dependency on R packages can be found in R files and can be installed automatically.
+
+*  Java (Optional if only you are only interested in regenerating figures)
 
 Sun Java SE Development Kit 7 or higher (https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html) is also needed. Setting JAVA_HOME may also be needed to launch Java at any folders(see http://www.sajeconsultants.com/how-to-set-java_home-on-mac-os-x/?utm_source=rss&utm_medium=rss&utm_campaign=how-to-set-java_home-on-mac-os-x).
 
 Bioconda users may also try 'conda install -c bioconda java-jdk' to install Java easily.
+
+*  Cytoscape (Optional if only you are only interested in viewing network session of Cytoscape)
 
 ## Usages
 

@@ -43,7 +43,7 @@ OG_threshold<-0.7004394 #loose FPR=0.01
 
 ##################### Figure 4B: Epigenetic regulator (ER) gene enrichment #####################
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_4");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_4");
 
 anno <- read.table("../DORGE_prediction.txt", header=T, sep="\t",fill=TRUE,quote = "")
 allgene<-anno[,c("Gene","TSG_probability","OG_probability","TSG_core","OG_core","TSG_all","OG_all","NG")]
@@ -119,13 +119,13 @@ pval<- -log10(pval)
 id<-c("Novel DORGE-TSG","Novel DORGE-OG","NG","CGC driver","CGC-TSG","CGC-OG")
 dat<-data.frame(id,pval)
 pdf("Raw_figures/Figure_4B_ER_enrichment.pdf", family="ArialMT", width=4, height=3)
-ggplot(data=dat, aes(x=as.factor(id), y=pval,fill=as.factor(id)))+geom_bar(stat="identity", alpha=1, position="dodge") + coord_flip()+labs(x="",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y=element_blank(),axis.text.x = element_text(colour = "black"),axis.text.y = element_text(colour = "black"),legend.position = "none",panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))+ scale_x_discrete(limits = rev(id))+scale_fill_manual(values=c("#333333","#E41A1C","#377EB8","#CCCCCC","#4DAF4A","#984EA3"))+ ggtitle("ER enrichment")+ annotate("text", x = 1, y = 10,label = paste("n = ",knownOG_ER,sep=""), parse = F,size =2)+annotate("text", x = 2, y = 15,color="white",label = paste("n = ",knownTSG_ER,sep=""), parse = F,size =2)+annotate("text", x = 3, y = 8,color="white",label = paste("n = ",driver_ER,sep=""), parse = F,size =2)+annotate("text", x = 4, y = 3,label = paste("n = ",NG_ER,sep=""), parse = F,size =2)+annotate("text", x = 5, y = 5,label = paste("n = ",novelOG_ER,sep=""), parse = F,size =2)+annotate("text", x = 6, y = 9,label = paste("n = ",novelTSG_ER,sep=""), parse = F,size =2)
+ggplot(data=dat, aes(x=as.factor(id), y=pval,fill=as.factor(id)))+geom_bar(stat="identity", alpha=1, position="dodge") + coord_flip()+labs(x="",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y=element_blank(),axis.text.x = element_text(colour = "black"),axis.text.y = element_text(colour = "black"),legend.position = "none",panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))+ scale_x_discrete(limits = rev(id))+scale_fill_manual(values=c("#333333","#E41A1C","#377EB8","#CCCCCC","#4DAF4A","#984EA3"))+ ggtitle("ER enrichment")+ annotate("text", x = 1, y = 10,label = paste("n = ",knownOG_ER,sep=""), parse = F,size =3)+annotate("text", x = 2, y = 16,color="white",label = paste("n = ",knownTSG_ER,sep=""), parse = F,size =3)+annotate("text", x = 3, y = 9,color="white",label = paste("n = ",driver_ER,sep=""), parse = F,size =3)+annotate("text", x = 4, y = 3,label = paste("n = ",NG_ER,sep=""), parse = F,size =3)+annotate("text", x = 5, y = 5,label = paste("n = ",novelOG_ER,sep=""), parse = F,size =3)+annotate("text", x = 6, y = 9,label = paste("n = ",novelTSG_ER,sep=""), parse = F,size =3)
 garbage <- dev.off()
 
 
 ##################### Figure 4C: Sleeping Beauty (SB) gene enrichment #####################
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_4");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_4");
 
 SBs <- read.table("data/driver-table.txt", header=T, sep="\t",fill=TRUE,quote = "")
 SBs <- mutate_each(SBs, list(toupper))
@@ -177,5 +177,5 @@ dat<-data.frame(id,pval)
 dat$id<-factor(dat$id,levels=c("CGC-TSG","Novel DORGE-TSG","NG"))
 
 pdf("Raw_figures/Figure_4C_SB_enrichment.pdf",family="ArialMT", width=1.5, height=3)
-ggplot(data=dat, aes(x=as.factor(id), y=pval,fill=as.factor(id)))+geom_bar(stat="identity", alpha=1, position="dodge") + labs(x="",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ theme_bw() + theme(axis.ticks.y = element_line(size = 0.5),axis.ticks.x=element_blank(),axis.text.x = element_text(angle = 30, hjust = 1, colour = "black"),axis.text.y = element_text(angle = 90, hjust = 0.5, colour = "black"),legend.position = "none",panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))+ scale_x_discrete(limits = id)+scale_fill_manual(values=c("#377EB8","#984EA3","#CCCCCC"))+ ggtitle("SB enrichment")+ annotate("text", x = 1,y = 22,color="black",label = paste("n = ",knownTSG_SB,sep=""), parse = F,size =2)+annotate("text", x = 2, y = 4,color="black",label = paste("n = ",NG_SB,sep=""), parse = F,size =2)+annotate("text", x = 3, y = 30,color="black",label = paste("n = ",novelTSG_SB,sep=""),size=3, parse = F)
+ggplot(data=dat, aes(x=as.factor(id), y=pval,fill=as.factor(id)))+geom_bar(stat="identity", alpha=1, position="dodge") + labs(x="",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ theme_bw() + theme(plot.title = element_text(size=10),axis.ticks.y = element_line(size = 0.5),axis.ticks.x=element_blank(),axis.text.x = element_text(angle = 30, hjust = 1, colour = "black"),axis.text.y = element_text(angle = 90, hjust = 0.5, colour = "black"),legend.position = "none",panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))+ scale_x_discrete(limits = id)+scale_fill_manual(values=c("#377EB8","#984EA3","#CCCCCC"))+ ggtitle("SB enrichment")+ annotate("text", x = 1,y = 19.5,color="black",label = paste("n = ",knownTSG_SB,sep=""), parse = F,size =2)+annotate("text", x = 2, y = 1.5,color="black",label = paste("n = ",NG_SB,sep=""), parse = F,size =2)+annotate("text", x = 3, y = 24.5,color="black",label = paste("n = ",novelTSG_SB,sep=""),size=2, parse = F)
 garbage <- dev.off()

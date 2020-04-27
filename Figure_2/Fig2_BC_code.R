@@ -26,7 +26,7 @@ library(PRROC)
 library(ggplot2)
 ################################## Figure 2B: TSG PRC curves ###############################
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_2");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_2");
 load("data/TSG.rdata")
 prc <- pr.curve(scores.class0=TSG.predictions[[1]], weights.class0=y_TSG, curve=T)
 dat <- as.data.frame(prc$curve)
@@ -46,7 +46,7 @@ for (i in 2:length(TSG.predictions)) {
 #"CRISPR-only","TUSON-TSG","All"
 
 pdf(file="Raw_figures/Figure_2B_PRC_TSGs.pdf", family="ArialMT", width=6.623, height=5)
-ggplot(data = plot_dat, aes(x = Recall, y = Precision))+scale_x_continuous(limits = c(0, 1),labels = c("0","0.25", "0.50", "0.75","1"))+scale_y_continuous(limits = c(0, 1),labels = c("0","0.25", "0.50", "0.75","1"))+geom_path(aes(color = Group, linetype = Group))+scale_color_manual(values = c("orange3","red","seagreen3","dodgerblue4","orange3","red","seagreen3","dodgerblue4","darkviolet","gold2","black"))+scale_linetype_manual(values=c("solid","solid","solid","solid","dashed","dashed","dashed","dashed","twodash","solid","solid")) + theme_bw() + theme(axis.ticks.y = element_line(size = 0.5),axis.ticks.x=element_line(size = 0.5),axis.text.x = element_text(angle = 0, hjust = 0.5, colour = "black"),axis.text.y = element_text(angle = 90, hjust = 0.5, colour = "black"), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))+ guides(fill=FALSE)
+ggplot(data = plot_dat, aes(x = Recall, y = Precision))+scale_x_continuous(limits = c(0, 1),labels = c("0","0.25", "0.50", "0.75","1"))+scale_y_continuous(limits = c(0, 1),labels = c("0","0.25", "0.50", "0.75","1"))+geom_path(aes(color = Group, linetype = Group))+scale_color_manual(values = c("orange3","red","seagreen3","dodgerblue4","orange3","red","seagreen3","dodgerblue4","darkviolet","gold2","black"))+scale_linetype_manual(values=c("solid","solid","solid","solid","11","11","11","11","1131","solid","solid")) + theme_bw() + theme(axis.ticks.y = element_line(size = 0.5),axis.ticks.x=element_line(size = 0.5),axis.text.x = element_text(angle = 0, hjust = 0.5, colour = "black"),axis.text.y = element_text(angle = 90, hjust = 0.5, colour = "black"), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))+ guides(fill=FALSE)
 garbage <- dev.off()
 
 ################################## Figure 2C: OG PRC curves ###############################
@@ -68,6 +68,6 @@ for (i in 2:length(OG.predictions)) {
 #"Mutation","Genomics","Phenotype","Epigenetics","wo_Mutation","wo_Genomics","wo_Phenotype","wo_Epigenetics"
 #"CRISPR-only","TUSON-OG","All"
 
-pdf(file="Raw_figures/Figure_2C_PRC_OGs.pdf", family="ArialMT", width=6.623, height=5)
-ggplot(data = plot_dat, aes(x = Recall, y = Precision))+scale_x_continuous(limits = c(0, 1),labels = c("0","0.25", "0.50", "0.75","1"))+scale_y_continuous(limits = c(0, 1),labels = c("0","0.25", "0.50", "0.75","1"))+geom_path(aes(color = Group, linetype = Group))+scale_color_manual(values = c("orange3","red","seagreen3","dodgerblue4","orange3","red","seagreen3","dodgerblue4","darkviolet","gold2","black"))+scale_linetype_manual(values=c("solid","solid","solid","solid","dashed","dashed","dashed","dashed","twodash","solid","solid")) + theme_bw() + theme(axis.ticks.y = element_line(size = 0.5),axis.ticks.x=element_line(size = 0.5),axis.text.x = element_text(angle = 0, hjust = 0.5, colour = "black"),axis.text.y = element_text(angle = 90, hjust = 0.5, colour = "black"), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))+ guides(fill=FALSE)
+pdf(file="Raw_figures/Figure_2C_PRC_OGs2.pdf", family="ArialMT", width=6.623, height=5)
+ggplot(data = plot_dat, aes(x = Recall, y = Precision))+scale_x_continuous(limits = c(0, 1),labels = c("0","0.25", "0.50", "0.75","1"))+scale_y_continuous(limits = c(0, 1),labels = c("0","0.25", "0.50", "0.75","1"))+geom_path(aes(color = Group, linetype = Group))+scale_color_manual(values = c("orange3","red","seagreen3","dodgerblue4","orange3","red","seagreen3","dodgerblue4","darkviolet","gold2","black"))+scale_linetype_manual(values=c("solid","solid","solid","solid","11","11","11","11","1131","solid","solid")) + theme_bw() + theme(axis.ticks.y = element_line(size = 0.5),axis.ticks.x=element_line(size = 0.5),axis.text.x = element_text(angle = 0, hjust = 0.5, colour = "black"),axis.text.y = element_text(angle = 90, hjust = 0.5, colour = "black"), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))+ guides(fill=FALSE)
 garbage <- dev.off()
