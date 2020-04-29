@@ -25,7 +25,7 @@ suppressMessages(library(plyr));
 suppressMessages(library(cowplot));
 
 ################################## Figure 1A Feature groups contributing most to the TSG prediction ###############################
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_1");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_1");
 
 TSG_features<-read.table("data/TSG_top4_feature_groups.txt",header=T,sep="\t");
 TSG_features[,1]<-gsub("_"," ",TSG_features[,1])
@@ -56,29 +56,29 @@ p2<-ggbarplot(TSG_features[TSG_features$hm=="height",],x="short_name",y="minuslo
 
 p3<-ggbarplot(TSG_features[TSG_features$Group=="Group 2",],x="Feature",y="minuslogP",sort.val = "desc",fill = "purple",color="transparent",sort.by.groups = TRUE,width = 0.6)+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y = element_line(size = 0.5),plot.margin = margin(0.01, 0.01, 0.01, 0.01),text = element_text(size=35), panel.border = element_blank(),panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.line = element_line(colour ="black"),axis.text.y = element_text(colour = "black", size = 35),axis.text.x = element_text(angle = 30, size = 35, hjust = 1, colour = "black"))+labs(x="",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ rremove("legend")+ggtitle("Phenotype")
 
-p4<-ggbarplot(TSG_features[TSG_features$Group=="Group 3",],x="Feature",y="minuslogP",sort.val = "desc",fill = "coral",color="transparent",sort.by.groups = TRUE,width = 0.8)+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y = element_line(size = 0.5),plot.margin = margin(0.01, 0.01, 0.01, 0.01),text = element_text(size=35), panel.border = element_blank(),panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.line = element_line(colour ="black"),axis.text.y = element_text(colour = "black", size = 35),axis.text.x = element_text(angle = 30, size = 35, hjust = 1, colour = "black"))+labs(x="",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ rremove("legend")+ggtitle("Super enhancer")
+p4<-ggbarplot(TSG_features[TSG_features$Group=="Group 3",],x="Feature",y="minuslogP",sort.val = "desc",fill = "coral",color="transparent",sort.by.groups = TRUE,width = 0.7)+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y = element_line(size = 0.5),plot.margin = margin(0.01, 0.01, 0.01, 0.01),text = element_text(size=35), panel.border = element_blank(),panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.line = element_line(colour ="black"),axis.text.y = element_text(colour = "black", size = 35),axis.text.x = element_text(angle = 30, size = 35, hjust = 1, colour = "black"))+labs(x="",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ rremove("legend")+ggtitle("Super enhancer")
 
 
-p5<-ggbarplot(TSG_features[TSG_features$Group=="Group 4",],x="Feature",y="minuslogP",sort.val = "desc",fill = "darkred",color="transparent",sort.by.groups = TRUE,width = 0.8)+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y = element_line(size = 0.5),plot.margin = margin(0.01, 0.01, 0.01, 0.01),text = element_text(size=35), panel.border = element_blank(),panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.line = element_line(colour ="black"),axis.text.y = element_text(colour = "black", size = 35),axis.text.x = element_text(angle = 30, size = 35, hjust = 1, colour = "black"))+labs(x="",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ rremove("legend")+ggtitle("Missense mutations")
+p5<-ggbarplot(TSG_features[TSG_features$Group=="Group 4",],x="Feature",y="minuslogP",sort.val = "desc",fill = "darkred",color="transparent",sort.by.groups = TRUE,width = 0.7)+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y = element_line(size = 0.5),plot.margin = margin(0.01, 0.01, 0.01, 0.01),text = element_text(size=35), panel.border = element_blank(),panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.line = element_line(colour ="black"),axis.text.y = element_text(colour = "black", size = 35),axis.text.x = element_text(angle = 30, size = 35, hjust = 1, colour = "black"))+labs(x="",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ rremove("legend")+ggtitle("Missense mutations")
 
 combined<-plot_grid(
 	NULL,
 	plot_grid(
 		plot_grid(
-			plot_grid(p1, p2, labels = "", align = 'v', rel_heights=c(1,1.2),nrow=2)
+			plot_grid(p1, p2, labels = "", align = 'v', rel_heights=c(1,1.0),nrow=2)
 			,NULL,ncol=2, align = 'h'
 		), 
 		p01,
-		plot_grid(p3, NULL,ncol=2, align = 'v',rel_widths=c(1,1.1)),
+		plot_grid(p3, NULL,ncol=2, align = 'v',rel_widths=c(1,1.3)),
 		p02,
-		plot_grid(p4, NULL,ncol=2, align = 'v',rel_widths=c(1,5.0)),
+		plot_grid(p4, NULL,ncol=2, align = 'v',rel_widths=c(1,5.2)),
 		p03,
-		plot_grid(p5, NULL,ncol=2, align = 'v',rel_widths=c(1,1.2)),
+		plot_grid(p5, NULL,ncol=2, align = 'v',rel_widths=c(1,1.3)),
 		p04,
 		p05, 
-		axis="l", labels = "", align = 'v', rel_heights=c(0.006,0.005,0.007,0.005,0.006,0.005,0.006,0.005,0.015),nrow=9
+		axis="l", labels = "", align = 'v', rel_heights=c(0.0065,0.005,0.007,0.005,0.006,0.005,0.006,0.005,0.015),nrow=9
 	),
-	NULL, labels = "", rel_widths = c(4,4,4),ncol=3
+	NULL, labels = "", rel_widths = c(3.5,4,4),ncol=3
 )
 
 save_plot("Raw_figures/Figure_1A_TSG_feature_groups.pdf", combined, family="ArialMT", ncol = 2, nrow = 4, base_height = 20,limitsize = FALSE)
@@ -112,32 +112,32 @@ p06<-ggplot() + theme_void()+ geom_text(data = data.frame(x = 1, y = 1, label = 
 p07<-ggplot() + theme_void()+ geom_text(data = data.frame(x = 1, y = 1, label = "Group 7:\nDecrease = 0.0058"),aes(x, y, label = label),hjust = 0.0, vjust = 0.0, size = 23,color = "black",inherit.aes = FALSE)
 
 
-p1<-ggbarplot(OG_features[OG_features$Group=="Group 1",],x="Feature",y="minuslogP",sort.val = "desc",fill = "darkred",color="white",sort.by.groups = TRUE,width = 0.8)+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y = element_line(size = 0.5),plot.margin = margin(0.01, 0.01, 0.01, 0.01),text = element_text(size=35),panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.ticks.length=unit(0.5, "cm"),axis.line = element_line(colour ="black"),axis.text.y = element_text(colour = "black", size = 35),axis.text.x = element_text(angle = 30, size = 35, hjust = 1, colour = "black"))+labs(x="",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ rremove("legend")+ggtitle("Missense mutations")
+p1<-ggbarplot(OG_features[OG_features$Group=="Group 1",],x="Feature",y="minuslogP",sort.val = "desc",fill = "darkred",color="white",sort.by.groups = TRUE,width = 0.9)+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y = element_line(size = 0.5),plot.margin = margin(0.01, 0.01, 0.01, 0.01),text = element_text(size=35),panel.border = element_blank(),panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.ticks.length=unit(0.5, "cm"),axis.line = element_line(colour ="black"),axis.text.y = element_text(colour = "black", size = 35),axis.text.x = element_text(angle = 30, size = 35, hjust = 1, colour = "black"))+labs(x="",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ rremove("legend")+ggtitle("Missense mutations")
 
-p2<-ggbarplot(OG_features[OG_features$Group=="Group 2",],x="Feature",y="minuslogP",sort.val = "desc",fill = "coral",color="transparent",sort.by.groups = TRUE,width = 0.8)+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y = element_line(size = 0.5),plot.margin = margin(0.01, 0.01, 0.01, 0.01),text = element_text(size=35),panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.ticks.length=unit(0.5, "cm"),axis.line = element_line(colour ="black"),axis.text.y = element_text(colour = "black", size = 35),axis.text.x = element_text(angle = 30, size = 35, hjust = 1, colour = "black"))+labs(x="",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ rremove("legend")+ggtitle("Super enhancer")
+p2<-ggbarplot(OG_features[OG_features$Group=="Group 2",],x="Feature",y="minuslogP",sort.val = "desc",fill = "coral",color="transparent",sort.by.groups = TRUE,width = 0.8)+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y = element_line(size = 0.5),plot.margin = margin(0.01, 0.01, 0.01, 0.01),text = element_text(size=35),panel.border = element_blank(),panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.ticks.length=unit(0.5, "cm"),axis.line = element_line(colour ="black"),axis.text.y = element_text(colour = "black", size = 35),axis.text.x = element_text(angle = 30, size = 35, hjust = 1, colour = "black"))+labs(x="",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ rremove("legend")+ggtitle("Super enhancer")
 
-p3<-ggbarplot(OG_features[OG_features$Group=="Group 3",],x="Feature",y="minuslogP",sort.val = "desc",fill = "cyan4",color="transparent",sort.by.groups = TRUE,width = 0.8)+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y = element_line(size = 0.5),plot.margin = margin(0.01, 0.01, 0.01, 0.01),text = element_text(size=35),panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.ticks.length=unit(0.5, "cm"),axis.line = element_line(colour ="black"),axis.text.y = element_text(colour = "black", size = 35),axis.text.x = element_text(angle = 30, size = 35, hjust = 1, colour = "black"))+labs(x="",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ rremove("legend")+ggtitle("Genomics")
+p3<-ggbarplot(OG_features[OG_features$Group=="Group 3",],x="Feature",y="minuslogP",sort.val = "desc",fill = "cyan4",color="transparent",sort.by.groups = TRUE,width = 0.8)+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y = element_line(size = 0.5),plot.margin = margin(0.01, 0.01, 0.01, 0.01),text = element_text(size=35),panel.border = element_blank(),panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.ticks.length=unit(0.5, "cm"),axis.line = element_line(colour ="black"),axis.text.y = element_text(colour = "black", size = 35),axis.text.x = element_text(angle = 30, size = 35, hjust = 1, colour = "black"))+labs(x="",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ rremove("legend")+ggtitle("Genomics")
 
-p4<-ggbarplot(OG_features[OG_features$Group=="Group 4",],x="Feature",y="minuslogP",sort.val = "desc",fill = "orange",color="transparent",sort.by.groups = TRUE,width = 0.8)+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y = element_line(size = 0.5),plot.margin = margin(0.01, 0.01, 0.01, 0.01),text = element_text(size=35),panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.ticks.length=unit(0.5, "cm"),axis.line = element_line(colour ="black"),axis.text.y = element_text(colour = "black", size = 35),axis.text.x = element_text(angle = 30, size = 35, hjust = 1, colour = "black"))+labs(x="",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ rremove("legend")+ggtitle("DNA methylation")
+p4<-ggbarplot(OG_features[OG_features$Group=="Group 4",],x="Feature",y="minuslogP",sort.val = "desc",fill = "orange",color="transparent",sort.by.groups = TRUE,width = 0.5)+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y = element_line(size = 0.5),plot.margin = margin(0.01, 0.01, 0.01, 0.01),text = element_text(size=35),panel.border = element_blank(),panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.ticks.length=unit(0.5, "cm"),axis.line = element_line(colour ="black"),axis.text.y = element_text(colour = "black", size = 35),axis.text.x = element_text(angle = 30, size = 35, hjust = 1, colour = "black"))+labs(x="",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ rremove("legend")+ggtitle("DNA methylation")
 
-p5<-ggbarplot(OG_features[OG_features$Group=="Group 5",],x="Feature",y="minuslogP",sort.val = "desc",fill = "darkred",color="transparent",sort.by.groups = TRUE,width = 0.8)+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y = element_line(size = 0.5),plot.margin = margin(0.01, 0.01, 0.01, 0.01),text = element_text(size=35),panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.ticks.length=unit(0.5, "cm"),axis.line = element_line(colour ="black"),axis.text.y = element_text(colour = "black", size = 35),axis.text.x = element_text(angle = 30, size = 35, hjust = 1, colour = "black"))+labs(x="",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ rremove("legend")+ggtitle("Missense mutation")
+p5<-ggbarplot(OG_features[OG_features$Group=="Group 5",],x="Feature",y="minuslogP",sort.val = "desc",fill = "darkred",color="transparent",sort.by.groups = TRUE,width = 0.6)+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y = element_line(size = 0.5),plot.margin = margin(0.01, 0.01, 0.01, 0.01),text = element_text(size=35),panel.border = element_blank(),panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.ticks.length=unit(0.5, "cm"),axis.line = element_line(colour ="black"),axis.text.y = element_text(colour = "black", size = 35),axis.text.x = element_text(angle = 30, size = 35, hjust = 1, colour = "black"))+labs(x="",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ rremove("legend")+ggtitle("Missense mutation")
 
 p6<-ggbarplot(OG_features[OG_features$hm=="length",],x="short_name",y="minuslogP",sort.val = "desc",fill = "darkgreen",color="transparent",sort.by.groups = TRUE,width = 0.8)+ theme_bw() + theme(axis.ticks.y = element_line(size = 0.5),plot.margin = margin(0.01, 0.01, 0.01, 0.01),text = element_text(size=35), panel.border = element_blank(),panel.grid.major = element_blank(),axis.ticks.length=unit(0.5, "cm"),panel.grid.minor = element_blank(),axis.line = element_line(colour ="black"),axis.text.y = element_text(colour = "black", size = 35),axis.text.x = element_text(angle = 30, size = 35, hjust = 1, colour = "black"))+labs(x="Peak length",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ rremove("legend")+ rremove("x.ticks")+ rremove("x.text")+ggtitle("Histone modification")
 
-p7<-ggbarplot(OG_features[OG_features$hm=="height",],x="short_name",y="minuslogP",sort.val = "none",fill = "blue",color="transparent",sort.by.groups = F,width = 0.8)+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y = element_line(size = 0.5),plot.margin = margin(0.01, 0.01, 0.01, 0.01),text = element_text(size=35), panel.border = element_blank(),panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.ticks.length=unit(0.5, "cm"),axis.line = element_line(colour ="black"),axis.text.y = element_text(colour = "black", size = 35),axis.text.x = element_text(angle = 30, size = 35, hjust = 1, colour = "black"))+labs(x="Peak height",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ rremove("legend")
+p7<-ggbarplot(OG_features[OG_features$hm=="height",],x="short_name",y="minuslogP",sort.val = "none",fill = "blue",color="transparent",sort.by.groups = F,width = 0.8)+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y = element_line(size = 0.5),plot.margin = margin(0.01, 0.01, 0.01, 0.01),text = element_text(size=35),panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.ticks.length=unit(0.5, "cm"),axis.line = element_line(colour ="black"),axis.text.y = element_text(colour = "black", size = 35),axis.text.x = element_text(angle = 30, size = 35, hjust = 1, colour = "black"))+labs(x="Peak height",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ rremove("legend")
 
-p8<-ggbarplot(OG_features[OG_features$Group=="Group 7",],x="Feature",y="minuslogP",sort.val = "desc",fill = "purple",color="transparent",sort.by.groups = TRUE,width = 0.8)+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y = element_line(size = 0.5),plot.margin = margin(0.01, 0.01, 0.01, 0.01),text = element_text(size=35),panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.ticks.length=unit(0.5, "cm"),axis.line = element_line(colour ="black"),axis.text.y = element_text(colour = "black", size = 35),axis.text.x = element_text(angle = 30, size = 35, hjust = 1, colour = "black"))+labs(x="",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ rremove("legend")+ggtitle("Phenotype")
+p8<-ggbarplot(OG_features[OG_features$Group=="Group 7",],x="Feature",y="minuslogP",sort.val = "desc",fill = "purple",color="transparent",sort.by.groups = TRUE,width = 0.65)+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y = element_line(size = 0.5),plot.margin = margin(0.01, 0.01, 0.01, 0.01),text = element_text(size=35),panel.border = element_blank(),panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.ticks.length=unit(0.5, "cm"),axis.line = element_line(colour ="black"),axis.text.y = element_text(colour = "black", size = 35),axis.text.x = element_text(angle = 30, size = 35, hjust = 1, colour = "black"))+labs(x="",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ rremove("legend")+ggtitle("Phenotype")
 
 combined<-plot_grid(
 	NULL,
 	plot_grid(
-		plot_grid(p1, NULL,ncol=2, align = 'v',rel_widths=c(1,2.0)),
+		plot_grid(p1, NULL,ncol=2, align = 'v',rel_widths=c(1,1.8)),
 		p01,
 		plot_grid(p2, NULL,ncol=2, align = 'v',rel_widths=c(1,5.5)),
 		p02,
 		plot_grid(p3, NULL,ncol=2, align = 'v',rel_widths=c(1,1.0)),
 		p03,
-		plot_grid(p4, NULL,ncol=2, align = 'v',rel_widths=c(1,5.5)),
+		plot_grid(p4, NULL,ncol=2, align = 'v',rel_widths=c(1,4.5)),
 		p04,
 		plot_grid(p5, NULL,ncol=2, align = 'v',rel_widths=c(1,7.0)),
 		p05,
@@ -146,8 +146,8 @@ combined<-plot_grid(
 			,NULL,ncol=2, align = 'h',rel_widths=c(1,1.5)
 		), 
 		p06,
-		plot_grid(p8, NULL,ncol=2, align = 'hv',rel_widths=c(1,3.0)),
-		p07,axis="l", labels = "", align = 'v', rel_heights=c(0.005,0.005,  0.004,0.005, 0.005,0.005, 0.004,0.005, 0.004,0.005, 0.005, 0.005, 0.005,0.009),nrow=14
+		plot_grid(p8, NULL,ncol=2, align = 'hv',rel_widths=c(1,2.0)),
+		p07,axis="l", labels = "", align = 'v', rel_heights=c(0.0036,0.005,  0.0035,0.005, 0.005,0.005, 0.0045,0.004, 0.0028,0.005, 0.0047, 0.005, 0.0045,0.009),nrow=14
 	),
 	NULL, labels = "", rel_widths = c(4,4,4),ncol=3
 )
