@@ -72,6 +72,9 @@ We also provide a convenient executable script (script_batch) for running R code
 &nbsp;&nbsp;&nbsp;&nbsp;|---Data_file_S1                       Unprocessed raw tables that are used to make the final Data file S1<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---Data_file_S2                       Unprocessed raw tables that are used to make the final Data file S2<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---Table_1                            Unprocessed raw table of Table 1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Data file S1.xlsx                  The final Data file S1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Data file S2.xlsx                  The final Data file S2<br/>
+
 script_batch				                    A convenient executable script (script_batch) for running R codes in a batch mode<br/>
 Gene_set_new.txt		                    Gene annotation file through the paper<br/>
 DORGE_prediction.txt                    DORGE prediction results<br/>
