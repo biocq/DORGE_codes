@@ -58,7 +58,7 @@ creeds_dat<-rbind(creeds_dataset,creeds_dataset2)
 creeds_dat_2fc<-creeds_dat[(creeds_dat$Fold_change>1) | (creeds_dat$Fold_change< -1),]#log2 fold change indeed
 gene_count<-plyr::count(creeds_dat_2fc, "Gene")
 recurrent_genes<-as.character(gene_count[gene_count$freq>0,1]) # Only genes with compounds of frequency >0 are shown
-drug_count<-count(creeds_dat_2fc[which(creeds_dat_2fc$Gene %in% recurrent_genes),], "Compound")
+drug_count<-plyr::count(creeds_dat_2fc[which(creeds_dat_2fc$Gene %in% recurrent_genes),], "Compound")
 recurrent_drugs<-as.character(drug_count[drug_count$freq>0,1]) # Only compounds with genes of frequency >0 are shown
 
 creeds_dat_2fc_bak<-creeds_dat_2fc[which(creeds_dat_2fc$Compound %in% recurrent_drugs),]
@@ -105,7 +105,7 @@ CMap_dat<-rbind(CMap_dataset,CMap_dataset2)
 CMap_dat_2fc<-CMap_dat[(CMap_dat$Fold_change>1) | (CMap_dat$Fold_change< -1),]
 gene_count<-plyr::count(CMap_dat_2fc, "Gene")
 recurrent_genes<-as.character(gene_count[gene_count$freq>0,1])
-drug_count<-count(CMap_dat_2fc[which(CMap_dat_2fc$Gene %in% recurrent_genes),], "Compound")
+drug_count<-plyr::count(CMap_dat_2fc[which(CMap_dat_2fc$Gene %in% recurrent_genes),], "Compound")
 recurrent_drugs<-as.character(drug_count[drug_count$freq>0,1])
 
 CMap_dat_2fc_bak<-CMap_dat_2fc[which(CMap_dat_2fc$Compound %in% recurrent_drugs),]

@@ -88,7 +88,7 @@ garbage <- dev.off()
 #setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_5");
 drug_gene_nr <- read.table("data/drug_gene_nr.txt", header=T, sep="\t")
 
-count<-count(drug_gene_nr, "Drug")
+count<-plyr::count(drug_gene_nr, "Drug")
 count<-count[rev(order(as.numeric(count$freq))),]
 
 pdf("Raw_figures/Figure_S5F_drug_degree.pdf", family="ArialMT", width=3, height=4)
