@@ -5,35 +5,34 @@ Codes and necessary data used in the DORGE paper for generating figures and tabl
 
 ## Dependency
 
-*  R 4.0.0 or higher (https://cran.r-project.org/)
+*  **R** 4.0.0 or higher (https://cran.r-project.org/)
 
 Dependency on R packages can be found in R files and can be installed automatically. Versions of R packages available for troubleshooting are shown below.
 
-Package	Version
-circlize	0.4.9  
-ComplexHeatmap	2.4.1  
-cowplot	1.0.0  
-data.table	1.12.8  
-dplyr	0.8.5  
-ggplot2	3.3.0  
-ggpubr	0.2.5  
-ggrepel	0.8.2  
-ggsci	2.9  
-ggsignif	0.6.0  
-Hmisc	4.4-0  
-plyr	1.8.6  
-PRROC	1.3.1  
-reshape2	1.4.4  
-scales	1.1.0  
-VennDiagram	1.6.20  
+Package	Version  
+**circlize**	0.4.9  
+**ComplexHeatmap**	2.4.1  
+**cowplot**	1.0.0  
+**data.table**	1.12.8  
+**dplyr**	0.8.5  
+**ggplot2**	3.3.0  
+**ggpubr**	0.2.5  
+**ggrepel**	0.8.2  
+**ggsignif**	0.6.0  
+**Hmisc**	4.4-0  
+**plyr**	1.8.6  
+**PRROC**	1.3.1  
+**reshape2**	1.4.4  
+**scales**	1.1.0  
+**VennDiagram**	1.6.20  
 
-*  Java (Optional if only you are only interested in regenerating figures)
+*  **Java** (Optional if only you are only interested in regenerating figures)
 
 Sun Java SE Development Kit 7 or higher (https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html) is also needed. Setting JAVA_HOME may also be needed to launch Java at any folders(see http://www.sajeconsultants.com/how-to-set-java_home-on-mac-os-x/?utm_source=rss&utm_medium=rss&utm_campaign=how-to-set-java_home-on-mac-os-x).
 
 Bioconda users may also try 'conda install -c bioconda java-jdk' to install Java easily.
 
-*  Cytoscape 3.8.0 or higher (Optional if only you are only interested in viewing network session file of Cytoscape)
+*  **Cytoscape** 3.8.0 or higher (Optional if only you are only interested in viewing network session file of Cytoscape)
 
 ## Usages
 
@@ -55,7 +54,7 @@ Under session> Set Working directory> Choose directory... to change to Figure_1 
 
 Option 4. Batch mode
 
-We also provide a convenient executable script (script_batch) for running R codes in a batch mode. Please set permission (i.e. chmod a+x script_batch) before executing it.
+We also provide a convenient executable script (**script_batch**) for running R codes in a batch mode. Please set permission (i.e. chmod a+x script_batch) before executing it.
 
 ## Layout of the website
 <br/>
