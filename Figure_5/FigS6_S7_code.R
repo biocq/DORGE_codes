@@ -56,7 +56,7 @@ creeds_dataset <- read.table("data/DGB/DGB_creeds_downregulated_simplified.txt",
 creeds_dataset2 <- read.table("data/DGB/DGB_creeds_upregulated_simplified.txt", header=T, sep="\t",quote = "")
 creeds_dat<-rbind(creeds_dataset,creeds_dataset2)
 creeds_dat_2fc<-creeds_dat[(creeds_dat$Fold_change>1) | (creeds_dat$Fold_change< -1),]#log2 fold change indeed
-gene_count<-count(creeds_dat_2fc, "Gene")
+gene_count<-plyr::count(creeds_dat_2fc, "Gene")
 recurrent_genes<-as.character(gene_count[gene_count$freq>0,1]) # Only genes with compounds of frequency >0 are shown
 drug_count<-count(creeds_dat_2fc[which(creeds_dat_2fc$Gene %in% recurrent_genes),], "Compound")
 recurrent_drugs<-as.character(drug_count[drug_count$freq>0,1]) # Only compounds with genes of frequency >0 are shown
@@ -89,12 +89,10 @@ compound_names <- c(compound_names,"Phorbol12-myristate13-acetate(pma)"="Compoun
 names(compound_names)<-capitalize(names(compound_names))
 
 
-
 pdf("Raw_figures/Figure_S6_creeds_heatmap.pdf", family="ArialMT", width=11.32, height=8.1)
 ha = rowAnnotation(Gene_type = Gene_type, col = list(Gene_type = c("CGC-OG" = "#E41A1C","Novel DORGE-OG" = "#4DAF4A", "CGC-TSG" = "#377EB8", "Novel DORGE-TSG" = "#984EA3")), show_annotation_name = F)
 ha2 = HeatmapAnnotation("Gene number" = anno_barplot(cbind(as.numeric(apply(dat_plot[,colselect],2,FUN=plus)),as.numeric(apply(dat_plot[,colselect],2,FUN=minus))),gp = gpar(fill = c("blue","red"), col = c("blue","red"),border="white")))
 ha3 = columnAnnotation(Compound_annotation = compound_names[colnames(dat_plot[,colselect])], col = list(Compound_annotation = c("Anti-cancer and chemotherapy drugs" = "#CCCCFF","Compounds with cell-line evidence" = "#FFCC99", "Compounds without anti-cancer evidence" = "#00CCCC")), show_annotation_name = F,simple_anno_size = unit(0.15, "cm"))
-
 Heatmap(dat_plot[,colselect], col = colorRamp2(c(-3,-1,0,1,3), c("red","pink","white","lightblue","blue")),show_row_names = T,name="Log2 fold change", row_names_gp = gpar(fontsize = 7),column_names_gp = gpar(fontsize = 7),cluster_rows=T,cluster_columns=T,show_column_dend=F, show_row_dend=F,heatmap_legend_param = list(title_position = "leftcenter-rot",color_bar = "continuous"), right_annotation =ha, top_annotation =ha2, bottom_annotation =ha3)
 garbage <- dev.off()
 
@@ -105,7 +103,7 @@ CMap_dataset <- read.table("data/DGB/DGB_CMap_downregulated_simplified.txt", hea
 CMap_dataset2 <- read.table("data/DGB/DGB_CMap_upregulated_simplified.txt", header=T, sep="\t",quote = "")
 CMap_dat<-rbind(CMap_dataset,CMap_dataset2)
 CMap_dat_2fc<-CMap_dat[(CMap_dat$Fold_change>1) | (CMap_dat$Fold_change< -1),]
-gene_count<-count(CMap_dat_2fc, "Gene")
+gene_count<-plyr::count(CMap_dat_2fc, "Gene")
 recurrent_genes<-as.character(gene_count[gene_count$freq>0,1])
 drug_count<-count(CMap_dat_2fc[which(CMap_dat_2fc$Gene %in% recurrent_genes),], "Compound")
 recurrent_drugs<-as.character(drug_count[drug_count$freq>0,1])
@@ -135,7 +133,6 @@ colnames(dat_plot)<-capitalize(colnames(dat_plot))
 
 
 pdf("Raw_figures/Figure_S7_CMap_heatmap.pdf", family="ArialMT", width=7.935, height=7.26)
-
 ha = rowAnnotation(Gene_type = Gene_type, col = list(Gene_type = c("CGC-OG" = "#E41A1C","Novel DORGE-OG" = "#4DAF4A", "CGC-TSG" = "#377EB8", "Novel DORGE-TSG" = "#984EA3")), show_annotation_name = F)
 ha2 = HeatmapAnnotation("Gene number" = anno_barplot(cbind(as.numeric(apply(dat_plot[,colselect],2,FUN=plus)),as.numeric(apply(dat_plot[,colselect],2,FUN=minus))),gp = gpar(fill = c("blue","red"), col = c("blue","red"),border="white")))
 ha3 = columnAnnotation(Compound_annotation = compound_names[colnames(dat_plot[,colselect])], col = list(Compound_annotation = c("Anti-cancer and chemotherapy drugs" = "#CCCCFF","Compounds with cell-line evidence" = "#FFCC99", "Compounds without anti-cancer evidence" = "#00CCCC")), show_annotation_name = F,simple_anno_size = unit(0.35, "cm"))

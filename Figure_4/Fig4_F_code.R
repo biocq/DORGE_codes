@@ -22,14 +22,14 @@ if (length(setdiff(pkgs, installed_pkgs)) > 0) {
     BiocManager::install("ComplexHeatmap")
 }
 
-pkgs <-  c("ggpubr","ggplot2","circlize","SuperExactTest")
+pkgs <-  c("ggpubr","circlize")
 
 
 if (length(setdiff(pkgs, installed_pkgs)) > 0) {
     install.packages(pkgs = setdiff(pkgs, installed_pkgs))
 }
 
-suppressMessages(library("dplyr"))
+suppressMessages(library("ggpubr"))
 suppressMessages(library("circlize"))
 suppressMessages(library("ComplexHeatmap"))
 

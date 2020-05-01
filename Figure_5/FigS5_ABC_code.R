@@ -19,7 +19,7 @@ options(warn=-1)
 
 installed_pkgs <- installed.packages()
 
-pkgs <-  c("plyr","ggsignif","ggpubr")
+pkgs <-  c("ggsignif","ggpubr")
 
 if (length(setdiff(pkgs, installed_pkgs)) > 0) {
     install.packages(pkgs = setdiff(pkgs, installed_pkgs))

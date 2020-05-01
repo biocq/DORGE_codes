@@ -5,9 +5,27 @@ Codes and necessary data used in the DORGE paper for generating figures and tabl
 
 ## Dependency
 
-*  R (https://cran.r-project.org/)
+*  R 4.0.0 or higher (https://cran.r-project.org/)
 
-Dependency on R packages can be found in R files and can be installed automatically.
+Dependency on R packages can be found in R files and can be installed automatically. Versions of R packages available for troubleshooting are shown below.
+
+Package	Version
+circlize	0.4.9  
+ComplexHeatmap	2.4.1  
+cowplot	1.0.0  
+data.table	1.12.8  
+dplyr	0.8.5  
+ggplot2	3.3.0  
+ggpubr	0.2.5  
+ggrepel	0.8.2  
+ggsci	2.9  
+ggsignif	0.6.0  
+Hmisc	4.4-0  
+plyr	1.8.6  
+PRROC	1.3.1  
+reshape2	1.4.4  
+scales	1.1.0  
+VennDiagram	1.6.20  
 
 *  Java (Optional if only you are only interested in regenerating figures)
 
@@ -15,7 +33,7 @@ Sun Java SE Development Kit 7 or higher (https://www.oracle.com/java/technologie
 
 Bioconda users may also try 'conda install -c bioconda java-jdk' to install Java easily.
 
-*  Cytoscape (Optional if only you are only interested in viewing network session of Cytoscape)
+*  Cytoscape 3.8.0 or higher (Optional if only you are only interested in viewing network session file of Cytoscape)
 
 ## Usages
 
@@ -91,4 +109,4 @@ Please cite the paper (DORGE: Discovery of Oncogenes and Tumor SuppressoR Genes 
 
 ## Issues
 
-Codes have been tested, if you encounter errors, please check the dependency or restart the R environment, given methods in packages may conflict and unexpected errors may occur. If you still encounter any problems, please [file an issue](https://github.com/biocq/DORGE_paper/issues) along with a detailed description.
+Codes have been tested in R 4.0.0 and Java 12.0.2. If you encounter errors, please check the dependency or restart the R environment, given packages may change in future and methods in packages may conflict and unexpected errors may occur. If you still encounter any problems, please [file an issue](https://github.com/biocq/DORGE_paper/issues) along with a detailed description.

@@ -28,7 +28,7 @@ if (length(setdiff(pkgs, installed_pkgs)) > 0) {
 }
 
 suppressMessages(library(VennDiagram))
-suppressMessages(library(grDevices))
+
 
 TSG_threshold<-0.62485 #loose FPR=0.01
 OG_threshold<-0.7004394 #loose FPR=0.01
@@ -37,7 +37,7 @@ OG_threshold<-0.7004394 #loose FPR=0.01
 #OG_threshold<-0.8679444 #strict FPR=0.005
 ######  Data preparation  ######
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_2");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_2");
 TSGene <- read.table("data/Human_TSGs_curated.txt", header=F, sep="\t")
 ONGene <- read.table("data/Human_OGs_curated.txt", header=F, sep="\t")
 

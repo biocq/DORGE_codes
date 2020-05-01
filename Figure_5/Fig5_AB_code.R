@@ -17,19 +17,7 @@
 
 options(warn=-1)
 
-### Install missing packages
-
-installed_pkgs <- installed.packages()
-
-pkgs <-  c("plyr","ggpubr","ggplot2")
-
-
-if (length(setdiff(pkgs, installed_pkgs)) > 0) {
-    install.packages(pkgs = setdiff(pkgs, installed_pkgs))
-}
-
-library("ggpubr")
-library(plyr)
+suppressMessages(library(plyr))
 
 TSG_threshold<-0.62485 #loose FPR=0.01
 OG_threshold<-0.7004394 #loose FPR=0.01
@@ -38,7 +26,7 @@ OG_threshold<-0.7004394 #loose FPR=0.01
 #OG_threshold<-0.8679444 #strict FPR=0.005
 ##################### Figure 5A: PPI network node annotation generation #####################
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_5");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_5");
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
 prediction <- read.table("../DORGE_prediction.txt", header=T, sep="\t",fill=TRUE,quote = "")
@@ -72,7 +60,7 @@ write.table(join,"data/BioGRID/nodes_anno.txt",sep="\t",quote=F,row.names=F,col.
 
 ##################### Statistical test related to Figure 5B: Statistical signficance calculation for dual function genes in the PPI network module #####################
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_5");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_5");
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
 prediction <- read.table("../DORGE_prediction.txt", header=T, sep="\t",fill=TRUE,quote = "")
@@ -107,16 +95,16 @@ index_novel_OG_specific<-setdiff(index_DORGE_predicted_nonCGC_OG,index_DORGE_pre
 
 index_DORGE_predicted_CGC_OG<-which(anno$OG_probability>OG_threshold & anno$OG_all=="1")
 index_DORGE_predicted_CGC_TSG<-which(anno$TSG_probability>TSG_threshold & anno$TSG_all=="1")
-#write.table(as.character(anno[index_DORGE_predicted_CGC_TSG,1]),"data/DORGE_predicted_CGC_TSGs.txt",sep="\t",quote=F,row.names=F,col.names=F)
-#write.table(as.character(anno[index_DORGE_predicted_CGC_OG,1]),"data/DORGE_predicted_CGC_OGs.txt",sep="\t",quote=F,row.names=F,col.names=F)
+write.table(as.character(anno[index_DORGE_predicted_CGC_TSG,1]),"data/DORGE_predicted_CGC_TSGs.txt",sep="\t",quote=F,row.names=F,col.names=F)
+write.table(as.character(anno[index_DORGE_predicted_CGC_OG,1]),"data/DORGE_predicted_CGC_OGs.txt",sep="\t",quote=F,row.names=F,col.names=F)
 
 index_DORGE_predicted_OG<-which(anno$OG_probability>OG_threshold)
 index_DORGE_predicted_TSG<-which(anno$TSG_probability>TSG_threshold)
 length(index_DORGE_predicted_OG)#669
 length(index_DORGE_predicted_TSG)#968
 index_DORGE_predicted_driver_genes<-union(index_DORGE_predicted_TSG,index_DORGE_predicted_OG)
-length(index_DORGE_predicted_driver_genes)#1201
-#write.table(as.character(anno[index_DORGE_predicted_driver_genes,1]),"data/DORGE_predicted_drivers.txt",sep="\t",quote=F,row.names=F,col.names=F)
+length(index_DORGE_predicted_driver_genes) #DORGE predicted driver genes: 1201
+write.table(as.character(anno[index_DORGE_predicted_driver_genes,1]),"data/DORGE_predicted_drivers.txt",sep="\t",quote=F,row.names=F,col.names=F)
 
 index_DORGE_predicted_CGC_driver_genes<-union(index_DORGE_predicted_CGC_TSG,index_DORGE_predicted_CGC_OG)
 length(index_DORGE_predicted_CGC_driver_genes)#328
@@ -126,15 +114,14 @@ length(index_dual_driver)#480
 index_DORGE_predicted_CGC_dual_driver<-intersect(which(index=="CGC-dual"),intersect(index_DORGE_predicted_CGC_TSG,index_DORGE_predicted_CGC_OG))
 length(index_DORGE_predicted_CGC_dual_driver)#43
 
-index_DORGE_predicted_CGC_dual_driver_genes<-intersect(index_DORGE_predicted_driver_genes,index_dual_driver)
-length(index_DORGE_predicted_CGC_dual_driver_genes)#461
+index_DORGE_predicted_dual_driver_genes<-intersect(index_DORGE_predicted_driver_genes,index_dual_driver)
+length(index_DORGE_predicted_dual_driver_genes)#461
 
 #The probability of the predicted novel dual function gene occurence in the modules
 binom.test(90,90,p=length(index_DORGE_predicted_dual_driver_genes)/1201)$p.value # 3.751566e-38
-
 
 #The probability of the CGC-dual function gene occurence in the modules
 binom.test(14,90,p=length(index_DORGE_predicted_CGC_dual_driver)/1201)$p.value #3.949327e-06
 
 
-#write.table(as.character(anno[union(which(anno$OG_probability> OG_threshold),which(anno$TSG_probability> TSG_threshold)),1]),"DORGE_predicted_driver_genes.txt",sep="\t",quote=F,row.names=F,col.names=F)
+#write.table(as.character(anno[union(which(anno$OG_probability> OG_threshold),which(anno$TSG_probability>TSG_threshold)),1]),"DORGE_predicted_driver_genes.txt",sep="\t",quote=F,row.names=F,col.names=F)

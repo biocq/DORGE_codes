@@ -2,7 +2,7 @@
 ##### Barplots  #####
 #####################
 
-###### The barplots showing the enrichment (-log10(P-values of Super exact test)) of Broad H3K4me3 genes and gene-body hypermethylation canyon genes in different gene categories.
+###### The barplots showing the enrichment (-log10(P-values of Fisher's exact test)) of Broad H3K4me3 genes and gene-body hypermethylation canyon genes in different gene categories.
 ###### Input: ../Gene_set_new.txt: Gene annotation file
 ###### Input: ../All_features.csv: Feature table compiled in this study
 ###### Input: data/genebody_canyon_genes.txt: Gene-body canyon genes (Compiled from https://genomebiology.biomedcentral.com/articles/10.1186/s13059-018-1492-3/figures/5)
@@ -24,7 +24,7 @@ suppressMessages(library("ggplot2"))
 
 ################################### Broad H3K4me3 peak gene enrichment ###################################
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_1");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_1");
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
 all_feature <- read.table("../All_features.csv", header=T, sep=",",fill=TRUE,quote = "")
@@ -91,7 +91,7 @@ garbage <- dev.off()
 
 ################################### Gene-body canyon gene enrichment ###################################
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_1");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_1");
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
 all_feature <- read.table("../All_features.csv", header=T, sep=",",fill=TRUE,quote = "")

@@ -46,7 +46,7 @@ OG_threshold<-0.7004394 #loose FPR=0.01
 
 ################################## Figure 2G ###############################
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_2");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_2");
 KEGG_TSG <- read.table("data/KEGG_2019_Human_table_novel_TSGs.txt", header=T, sep="\t")
 KEGG_TSG <- KEGG_TSG[,c(1,3,4)]
 names(KEGG_TSG)<-c("Term","Pvalue_T","Adjusted_T");

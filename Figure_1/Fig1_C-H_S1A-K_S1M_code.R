@@ -12,7 +12,6 @@
 ###### Output: Figure_1F_Missense_entropy.pdf: Box plots showing the distribution of missense entropy among CGC-OG, CGC-TSG, and neutral gene (NG) sets
 ###### Output: Figure_1G_pLI_score.pdf: Box plots showing the distribution of pLI score among CGC-OG, CGC-TSG, and neutral gene (NG) sets
 ###### Output: Figure_1H_super_enhancer_percentage.pdf: Box plots showing the distribution of super enhancer percentage among CGC-OG, CGC-TSG, and neutral gene (NG) sets
-###### Output: Figure_1I_gene-body_hypermethylation.pdf: Box plots showing the distribution of gene-body hypermethylation among CGC-OG, CGC-TSG, and neutral gene (NG) sets
 ###### Output: Figure_S1A_Height_of_H3K4me3_peaks.pdf: Box plots showing the distribution of tri-methylation of histone H3 lysine 4 (H3K4me3) peak height among CGC-OG, CGC-TSG, and neutral gene (NG) sets
 ###### Output: Figure_S1B_H3K79me2_peak_length.pdf: Box plots showing the distribution of di-methylation of histone H3 lysine 79 (H3K79me2) peak length among CGC-OG, CGC-TSG, and neutral gene (NG) sets
 ###### Output: Figure_S1C_Height_of_H3K79me2_peaks.pdf: Box plots showing the distribution of di-methylation of histone H3 lysine 79 (H3K79me2) peak height among CGC-OG, CGC-TSG, and neutral gene (NG) sets
@@ -129,7 +128,8 @@ allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
 
 pdf("Raw_figures/Figure_S1B_H3K79me2_peak_length.pdf", family="ArialMT", width=1.6, height=3)
-my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))ggboxplot(data = allgene2,x = "index", y="H3K79me2_peak_length",color="black",outlier.size = 0.2,width=0.7, fill="index",lwd=0.25,palette = c("#E41A1C","#377EB8","#CCCCCC"))+  scale_y_continuous(breaks = c(0,2000,4000,6000),labels = c("0", "2000", "4000", "12000"))+ labs(x = "", y = "H3K79me2 peak length") + theme_bw() + theme(axis.ticks.y = element_line(size = 0.5),axis.ticks.x=element_blank(),axis.text.x = element_text(angle = 30, hjust = 1, colour = "black"),axis.text.y = element_text(angle = 90, hjust = 0.5, colour = "black"), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))+ guides(fill=FALSE)+stat_compare_means(aes(label = paste0(..p.format..)),method.args = list(alternative = "g"),comparisons = my_comparisons,size=2.5)
+my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))
+ggboxplot(data = allgene2,x = "index", y="H3K79me2_peak_length",color="black",outlier.size = 0.2,width=0.7, fill="index",lwd=0.25,palette = c("#E41A1C","#377EB8","#CCCCCC"))+  scale_y_continuous(breaks = c(0,2000,4000,6000),labels = c("0", "2000", "4000", "12000"))+ labs(x = "", y = "H3K79me2 peak length") + theme_bw() + theme(axis.ticks.y = element_line(size = 0.5),axis.ticks.x=element_blank(),axis.text.x = element_text(angle = 30, hjust = 1, colour = "black"),axis.text.y = element_text(angle = 90, hjust = 0.5, colour = "black"), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))+ guides(fill=FALSE)+stat_compare_means(aes(label = paste0(..p.format..)),method.args = list(alternative = "g"),comparisons = my_comparisons,size=2.5)
 garbage <- dev.off()
 
 
@@ -342,34 +342,6 @@ my_comparisons <- list(c("CGC-OG","NG"),c("CGC-TSG","NG"),c("CGC-OG","CGC-TSG"))
 pdf("Raw_figures/Figure_S1M_gene-body_hypermethylation_at_canyon_genes.pdf", family="ArialMT", width=1.6, height=3)
 my_comparisons <- list(c("CGC-OG", "NG"),c("NG","CGC-TSG"),c("CGC-OG", "CGC-TSG"))
 ggboxplot(data = allgene2,x = "index", y="genebody_canyon_hypermethylation_diff",color="black",outlier.size = 0.6,width=0.7, fill="index",lwd=0.25,palette = c("#E41A1C","#377EB8","#CCCCCC"))+ labs(x = "", y = "Gene-body differential methylation\nat gene-body canyon genes") + theme_bw() + theme(axis.ticks.x=element_blank(),axis.text.x = element_text(angle = 30, hjust = 1, colour = "black"),axis.text.y = element_text(angle = 90, hjust = 0.5, colour = "black"), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))+ guides(fill=FALSE)+stat_compare_means(aes(label = paste0(..p.format..)),method.args = list(alternative = "g"),comparisons = my_comparisons,size=2.5)
-garbage <- dev.off()
-
-################# Gene-body differential hypermethylation #################
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_1");
-anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
-colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
-all_feature <- read.table("../All_features.csv", header=T, sep=",",fill=TRUE,quote = "")
-allgene<-all_feature[,c("Gene","Gene_body_hypermethylation_in_cancer")]
-
-TSG_CGC<-anno[,5]
-OG_CGC<-anno[,6]
-NG<-anno[,4]
-
-index_OG<-which(OG_CGC=="1" & TSG_CGC!="1")
-index_TSG<-which(TSG_CGC=="1" & OG_CGC!="1")
-index<-rep("",nrow(allgene))
-index[which(NG=="1")]<-"NG"
-index[index_TSG]<-"CGC-TSG"
-index[index_OG]<-"CGC-OG"
-
-allgene<-cbind(allgene,index)
-allgene2<-allgene[allgene$index!="",]
-
-my_comparisons <- list(c("CGC-OG","NG"),c("CGC-TSG","NG"),c("CGC-OG","CGC-TSG"))
-
-pdf("Raw_figures/Figure_1I_gene-body_hypermethylation.pdf", family="ArialMT", width=1.6, height=3)
-my_comparisons <- list(c("CGC-OG", "NG"),c("NG","CGC-TSG"),c("CGC-OG", "CGC-TSG"))
-ggboxplot(data = allgene2,x = "index", y="Gene_body_hypermethylation_in_cancer",color="black",outlier.size = 0.6,width=0.7, fill="index",lwd=0.25,palette = c("#E41A1C","#377EB8","#CCCCCC"))+ labs(x = "", y = "Gene-body hypermethylation") + theme_bw() + theme(axis.ticks.x=element_blank(),axis.text.x = element_text(angle = 30, hjust = 1, colour = "black"),axis.text.y = element_text(angle = 90, hjust = 0.5, colour = "black"), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))+ guides(fill=FALSE)+stat_compare_means(aes(label = paste0(..p.format..)),method.args = list(alternative = "g"),comparisons = my_comparisons,size=2.5)
 garbage <- dev.off()
 
 ################# Missense entropy #################
