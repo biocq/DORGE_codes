@@ -18,7 +18,7 @@ installed_pkgs <- installed.packages()
 pkgs <-  c("ggplot2")
 
 if (length(setdiff(pkgs, installed_pkgs)) > 0) {
-    install.packages(pkgs = setdiff(pkgs, installed_pkgs),repos = "http://cran.us.r-project.org")
+    install.packages(pkgs = setdiff(pkgs, installed_pkgs), repos = "http://cran.us.r-project.org")
 }
 
 suppressMessages(library("ggplot2"))

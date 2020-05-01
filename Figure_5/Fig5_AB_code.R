@@ -17,6 +17,14 @@
 
 options(warn=-1)
 
+installed_pkgs <- installed.packages()
+
+pkgs <-  c("plyr")
+
+if (length(setdiff(pkgs, installed_pkgs)) > 0) {
+    install.packages(pkgs = setdiff(pkgs, installed_pkgs), repos = "http://cran.us.r-project.org")
+}
+
 suppressMessages(library(plyr))
 
 TSG_threshold<-0.62485 #loose FPR=0.01

@@ -21,7 +21,7 @@ installed_pkgs <- installed.packages()
 pkgs <-  c("data.table","circlize","plyr","Hmisc","reshape2")
 
 if (length(setdiff(pkgs, installed_pkgs)) > 0) {
-    install.packages(pkgs = setdiff(pkgs, installed_pkgs))
+    install.packages(pkgs = setdiff(pkgs, installed_pkgs), repos = "http://cran.us.r-project.org")
 }
 
 pkgs <-  c("ComplexHeatmap")

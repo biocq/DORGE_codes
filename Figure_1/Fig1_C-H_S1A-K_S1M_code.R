@@ -35,7 +35,7 @@ installed_pkgs <- installed.packages()
 pkgs <-  c("ggpubr","scales")
 
 if (length(setdiff(pkgs, installed_pkgs)) > 0) {
-    install.packages(pkgs = setdiff(pkgs, installed_pkgs))
+    install.packages(pkgs = setdiff(pkgs, installed_pkgs), repos = "http://cran.us.r-project.org")
 }
 
 suppressMessages(library("ggpubr"))

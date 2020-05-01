@@ -2,7 +2,7 @@
 ######## Heatmaps and scatterplots ########
 ###########################################
 
-###### The DORGE-predicted novel TSGs and OGs are enriched in specific terms of KEGG pathways (Figure_2G). Besides, the DORGE-predicted TSGs and OGs using non-Epigenetic features are also enriched in specific terms of KEGG pathways (Figure_S3A). The difference is quantified by scatterplots Figure_S3B,C.
+###### The DORGE-predicted novel TSGs and OGs are enriched in specific terms of KEGG pathways (Figure_2G). Besides, the DORGE-predicted TSGs and OGs using non-Epigenetic features are also enriched in specific terms of KEGG pathways (Figure_S3A). The difference is quantified by scatterplots Figure_S3B and S3C.
 
 ###### Input: data/KEGG_2019_Human_table_novel_TSGs.txt: Enrichr "KEGG 2019 human" results using all DORGE-predict novel non-CGC TSGs
 ###### Input: data/KEGG_2019_Human_table_novel_OGs.txt: Enrichr "KEGG 2019 human" results using all DORGE-predict novel non-CGC OGs
@@ -29,7 +29,7 @@ if (length(setdiff(pkgs, installed_pkgs)) > 0) {
 pkgs <-  c("plyr","circlize","ggpubr","ggrepel")
 
 if (length(setdiff(pkgs, installed_pkgs)) > 0) {
-    install.packages(pkgs = setdiff(pkgs, installed_pkgs))
+    install.packages(pkgs = setdiff(pkgs, installed_pkgs), repos = "http://cran.us.r-project.org")
 }
 
 suppressMessages(library(ggpubr))
@@ -73,7 +73,7 @@ log10_join2<-log10_join2[c(which(log10_join2$Term=="Apoptosis"),union(index_diff
 dat_plot<-log10_join2[,c(1,7,9)]
 dat_plot2<-dat_plot[,c(3,2)]
 rownames(dat_plot2)<-dat_plot[,1]
-pdf("Raw_figures/Figure_2F_KEGG_novelTSGOG.pdf", family="ArialMT", width=4, height=5.5)#Figure 2F
+pdf("Raw_figures/Figure_2G_KEGG_novelTSGOG.pdf", family="ArialMT", width=4, height=5.5)#Figure 2F
 Heatmap(as.matrix(dat_plot2), col = colorRamp2(c(10, 5, 3, 1, 0.1), c("red","darksalmon", "deepskyblue","dodgerblue","blue")),row_names_rot = 315, row_names_side = "right",clustering_method_rows = "complete",show_row_names = T,cluster_rows=T,column_title_rot = 0,column_labels=c("OG (n=500)","TSG (n=766)"),row_dend_side = "left",row_dend_width=unit(3,"mm"),column_title_side = "top",show_column_dend = F,row_names_gp = gpar(fontsize = 7),column_names_gp = gpar(fontsize = 7),heatmap_legend_param = list(title = expression("-log"[10]~"Adjusted "~italic(P)~"-value")),heatmap_height = unit(14, "cm"),heatmap_width = unit(5.4,"cm"))
 dev.off()
 
