@@ -201,7 +201,7 @@ gene_cat[index_CGC_OG]<-"OG"
 gene_cat[index_canyon]<-"Canyon"
 allgene<-cbind(allgene,gene_cat)     
 allgene2<-allgene[allgene$gene_cat!="",]
-
+allgene2$gene_cat<-factor(allgene2$gene_cat,levels=c("Canyon", "NG", "OG"))
 my_comparisons <- list( c("NG", "Canyon"),c("OG", "Canyon"))
 
 pdf("Raw_figures/Figure_S3H_Missense_entropy_boxplot.pdf", family="ArialMT", width=2, height=5.6927)#Figure 3FG

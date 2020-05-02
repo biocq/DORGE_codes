@@ -64,6 +64,7 @@ index[index_OG]<-"CGC-OG"
 
 join<-cbind(join,index)
 allgene2<-join[join$index!="" & !is.na(join$index),]
+allgene2$index<-factor(allgene2$index,levels=c("CGC-OG", "CGC-TSG", "NG", "Novel DORGE-OG", "Novel DORGE-TSG"))
 
 ca<-paste("Raw_figures/Figure_4D_survival_READ_evaluation.pdf",sep="")
 pdf(ca, family="ArialMT", width=2.275, height=3)

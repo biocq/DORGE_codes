@@ -64,7 +64,7 @@ index[index_OG]<-"CGC-OG"
 index[index_TSG]<-"CGC-TSG"
 allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
-
+allgene2$index<-factor(allgene2$index,levels=c("CGC-OG", "CGC-TSG", "NG"))
 
 pdf("Raw_figures/Figure_1C_H3K4me3_peak_length.pdf", family="ArialMT", width=1.6, height=3)
 my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))
@@ -95,7 +95,7 @@ index[index_OG]<-"CGC-OG"
 index[index_TSG]<-"CGC-TSG"
 allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
-
+allgene2$index<-factor(allgene2$index,levels=c("CGC-OG", "CGC-TSG", "NG"))
 
 pdf("Raw_figures/Figure_S1A_Height_of_H3K4me3_peaks.pdf", family="ArialMT", width=1.6, height=3)
 my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))
@@ -126,6 +126,7 @@ index[index_OG]<-"CGC-OG"
 index[index_TSG]<-"CGC-TSG"
 allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
+allgene2$index<-factor(allgene2$index,levels=c("CGC-OG", "CGC-TSG", "NG"))
 
 pdf("Raw_figures/Figure_S1B_H3K79me2_peak_length.pdf", family="ArialMT", width=1.6, height=3)
 my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))
@@ -156,7 +157,7 @@ index[index_OG]<-"CGC-OG"
 index[index_TSG]<-"CGC-TSG"
 allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
-
+allgene2$index<-factor(allgene2$index,levels=c("CGC-OG", "CGC-TSG", "NG"))
 
 pdf("Raw_figures/Figure_S1C_Height_of_H3K79me2_peaks.pdf", family="ArialMT", width=1.6, height=3)
 my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))
@@ -187,7 +188,7 @@ index[index_OG]<-"CGC-OG"
 index[index_TSG]<-"CGC-TSG"
 allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
-
+allgene2$index<-factor(allgene2$index,levels=c("CGC-OG", "CGC-TSG", "NG"))
 
 pdf("Raw_figures/Figure_S1I_H3K36me3_peak_length.pdf", family="ArialMT", width=1.6, height=3)
 my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))
@@ -217,7 +218,7 @@ index[index_OG]<-"CGC-OG"
 index[index_TSG]<-"CGC-TSG"
 allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
-
+allgene2$index<-factor(allgene2$index,levels=c("CGC-OG", "CGC-TSG", "NG"))
 
 pdf("Raw_figures/Figure_S1J_H4K20me1_peak_length.pdf", family="ArialMT", width=1.6, height=3)
 my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))
@@ -247,7 +248,7 @@ index[index_OG]<-"CGC-OG"
 index[index_TSG]<-"CGC-TSG"
 allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
-
+allgene2$index<-factor(allgene2$index,levels=c("CGC-OG", "CGC-TSG", "NG"))
 
 pdf("Raw_figures/Figure_S1K_H3K9ac_peak_length.pdf", family="ArialMT", width=1.6, height=3)
 my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))
@@ -275,6 +276,7 @@ index[index_OG]<-"CGC-OG"
 index[index_TSG]<-"CGC-TSG"
 allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
+allgene2$index<-factor(allgene2$index,levels=c("CGC-OG", "CGC-TSG", "NG"))
 
 pdf("Raw_figures/Figure_1D_VEST_score.pdf", family="ArialMT", width=1.6, height=3)
 my_comparisons <- list(c("CGC-OG","NG"),c("CGC-TSG","NG"),c("CGC-TSG","CGC-OG"))
@@ -302,6 +304,7 @@ index[index_OG]<-"CGC-OG"
 index[index_TSG]<-"CGC-TSG"
 allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
+allgene2$index<-factor(allgene2$index,levels=c("CGC-OG", "CGC-TSG", "NG"))
 
 pdf("Raw_figures/Figure_S1F_Exon_conservation_phastCons_score.pdf", family="ArialMT", width=1.6, height=3)
 my_comparisons <- list(c("CGC-OG","NG"),c("CGC-TSG","NG"),c("CGC-TSG","CGC-OG"))
@@ -335,9 +338,9 @@ index[index_OG]<-"CGC-OG"
 allgene<-cbind(allgene,index)
 allgene<-allgene[which(allgene$Gene%in%genebody_canyon_genes$V1),]
 allgene2<-allgene[allgene$index!="" & allgene$Gene%in%genebody_canyon_genes$V1,]
+allgene2$index<-factor(allgene2$index,levels=c("CGC-OG", "CGC-TSG", "NG"))
 
-my_comparisons <- list(c("CGC-OG","NG"),c("CGC-TSG","NG"),c("CGC-OG","CGC-TSG"))
-
+#my_comparisons <- list(c("CGC-OG","NG"),c("CGC-TSG","NG"),c("CGC-OG","CGC-TSG"))
 #ggboxplot(data = allgene2,x = "index", y="Gene_body_canyon_hypermethylation_in_cancer",color="black",outlier.size = 0.6,width=0.7, fill="index",palette = c("#E41A1C","#377EB8","#CCCCCC"))+ labs(x = "", y = "Gene-body hypermethylation ") + theme_bw() + theme(axis.ticks.x=element_blank(),axis.text.x = element_text(angle = 30, hjust = 1, colour = "black"),axis.text.y = element_text(angle = 90, hjust = 0.5, colour = "black"), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))+ guides(fill=FALSE)+stat_compare_means(aes(label = paste0(..p.format..)),method.args = list(alternative = "g"),comparisons = my_comparisons,size=2.5)
 pdf("Raw_figures/Figure_S1M_gene-body_hypermethylation_at_canyon_genes.pdf", family="ArialMT", width=1.6, height=3)
 my_comparisons <- list(c("CGC-OG", "NG"),c("NG","CGC-TSG"),c("CGC-OG", "CGC-TSG"))
@@ -365,6 +368,7 @@ index[index_OG]<-"CGC-OG"
 
 allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
+allgene2$index<-factor(allgene2$index,levels=c("CGC-OG", "CGC-TSG", "NG"))
 
 # John and Draper's modulus transformation
 modulus_trans <- function(lambda){
@@ -418,6 +422,7 @@ index[index_OG]<-"CGC-OG"
 
 allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
+allgene2$index<-factor(allgene2$index,levels=c("CGC-OG", "CGC-TSG", "NG"))
 
 pdf("Raw_figures/Figure_1E_Missense_damaging_benign_ratio.pdf", family="ArialMT", width=1.6, height=3)
 my_comparisons <- list(c("CGC-OG","NG"),c("CGC-TSG","NG"),c("CGC-OG","CGC-TSG"))
@@ -449,6 +454,7 @@ index[index_OG]<-"CGC-OG"
 
 allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
+allgene2$index<-factor(allgene2$index,levels=c("CGC-OG", "CGC-TSG", "NG"))
 
 pdf("Raw_figures/Figure_1H_super_enhancer_percentage.pdf", family="ArialMT", width=1.6, height=3)
 my_comparisons <- list(c("CGC-OG","NG"),c("CGC-TSG","NG"),c("CGC-TSG","CGC-OG"))
@@ -476,6 +482,7 @@ index[index_OG]<-"CGC-OG"
 
 allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
+allgene2$index<-factor(allgene2$index,levels=c("CGC-OG", "CGC-TSG", "NG"))
 
 pdf("Raw_figures/Figure_S1G_ncGERP_score.pdf", family="ArialMT", width=1.6, height=3)
 my_comparisons <- list(c("CGC-OG","NG"),c("CGC-TSG","NG"),c("CGC-OG","CGC-TSG"))
@@ -503,6 +510,7 @@ index[index_OG]<-"CGC-OG"
 
 allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
+allgene2$index<-factor(allgene2$index,levels=c("CGC-OG", "CGC-TSG", "NG"))
 
 pdf("Raw_figures/Figure_S1H_PolyPhen_2_score.pdf", family="ArialMT", width=1.6, height=3)
 my_comparisons <- list(c("CGC-OG","NG"),c("CGC-TSG","NG"),c("CGC-OG","CGC-TSG"))
@@ -531,6 +539,7 @@ index[index_OG]<-"CGC-OG"
 
 allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
+allgene2$index<-factor(allgene2$index,levels=c("CGC-OG", "CGC-TSG", "NG"))
 
 pdf("Raw_figures/Figure_1G_pLI_score.pdf", family="ArialMT", width=1.6, height=3)
 my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-OG", "CGC-TSG"))
@@ -564,6 +573,7 @@ index[index_OG]<-"CGC-OG"
 
 allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
+allgene2$index<-factor(allgene2$index,levels=c("CGC-OG", "CGC-TSG", "NG"))
 
 pdf("Raw_figures/Figure_S1E_LoF_o_e_constraint.pdf", family="ArialMT", width=1.6, height=3)
 my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))
@@ -592,6 +602,7 @@ index[index_OG]<-"CGC-OG"
 
 allgene<-cbind(allgene,index)
 allgene2<-allgene[allgene$index!="",]
+allgene2$index<-factor(allgene2$index,levels=c("CGC-OG", "CGC-TSG", "NG"))
 
 pdf("Raw_figures/Figure_S1D_NonSilent_silent_ratio.pdf", family="ArialMT", width=1.6, height=3)
 my_comparisons <- list(c("CGC-OG", "NG"),c("CGC-TSG","NG"),c("CGC-TSG", "CGC-OG"))

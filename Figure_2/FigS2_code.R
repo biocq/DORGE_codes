@@ -204,11 +204,12 @@ inverse = function(yt){
 
 join2<-join[join$category_TSG=="CGC-TSG",]
 
-ranks<-c(join2$Rank_TUSON_TSG,join2$Rank_2020plus_TSG,join2$Rank_DORGE_TSG)
-categories<-c(rep("TUSON_TSG",length(join2$Rank_TUSON_TSG)),rep("Plus2020_TSG",length(join2$Rank_2020plus_TSG)),rep("DORGE_TSG",length(join2$Rank_DORGE_TSG)))
+ranks<-c(join2$Rank_DORGE_TSG,join2$Rank_2020plus_TSG,join2$Rank_TUSON_TSG)
+categories<-c(rep("DORGE_TSG",length(join2$Rank_DORGE_TSG)),rep("Plus2020_TSG",length(join2$Rank_2020plus_TSG)),rep("TUSON_TSG",length(join2$Rank_TUSON_TSG)))
 combined<-data.frame("Ranks"=ranks,"Cat"=categories)
-my_comparisons <- list(c("DORGE_TSG", "TUSON_TSG"),c("DORGE_TSG","Plus2020_TSG"))
+
 pdf("Raw_figures/Figure_S2E_comparison_on_all_CGC_TSGs.pdf", family="ArialMT", width=2.5, height=3)
+my_comparisons <- list(c("DORGE_TSG", "TUSON_TSG"),c("DORGE_TSG","Plus2020_TSG"))
 p<-ggboxplot(data = combined,x = "Cat", y="Ranks",color="black",outlier.size=0.2,width=0.8,fill="Cat",lwd=0.25)+ labs(x = "", y = "Rank")+ scale_x_discrete(labels= c("DORGE TSG","20/20+ TSG","TUSON TSG")) + scale_y_continuous(trans = modulus_trans(0.08),breaks = c(0,100,300,num_TSG_prediction,2000,5000,10000,20000))+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y = element_line(size = 0.5),axis.text.x = element_text(angle = 30, hjust = 1, colour = "black"),axis.text.y = element_text(angle = 0, hjust = 1, colour = "black"),panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))+ guides(fill=FALSE)+stat_compare_means(aes(label = paste0(..p.format..)),method.args = list(alternative = "l"),comparisons = my_comparisons,size=2)+stat_summary(fun.data = function(x) data.frame(y=15, size=2, label = paste("Median = ",round(inverse(x),1))), geom="text")+ ggtitle("CGC-TSG")
 suppressMessages(print(ggpar(p,legend.title = "")+ rremove("legend")))
 garbage <- dev.off()
@@ -221,8 +222,8 @@ inverse = function(yt){
 
 join2<-join[join$category_TSG=="Core CGC-TSG",]
 
-ranks<-c(join2$Rank_TUSON_TSG,join2$Rank_2020plus_TSG,join2$Rank_DORGE_TSG)
-categories<-c(rep("TUSON_TSG",length(join2$Rank_TUSON_TSG)),rep("Plus2020_TSG",length(join2$Rank_2020plus_TSG)),rep("DORGE_TSG",length(join2$Rank_DORGE_TSG)))
+ranks<-c(join2$Rank_DORGE_TSG,join2$Rank_2020plus_TSG,join2$Rank_TUSON_TSG)
+categories<-c(rep("DORGE_TSG",length(join2$Rank_DORGE_TSG)),rep("Plus2020_TSG",length(join2$Rank_2020plus_TSG)),rep("TUSON_TSG",length(join2$Rank_TUSON_TSG)))
 combined<-data.frame("Ranks"=ranks,"Cat"=categories)
 my_comparisons <- list(c("DORGE_TSG", "TUSON_TSG"),c("DORGE_TSG","Plus2020_TSG"))
 pdf("Raw_figures/Figure_S2F_comparison_on_Core_CGC_TSGs.pdf", family="ArialMT", width=2.5, height=3)
@@ -238,12 +239,11 @@ inverse = function(yt){
 
 join2<-join[join$category_OG=="CGC-OG",]
 
-ranks<-c(join2$Rank_TUSON_OG,join2$Rank_2020plus_OG,join2$Rank_DORGE_OG)
-categories<-c(rep("TUSON_OG",length(join2$Rank_TUSON_OG)),rep("Plus2020_OG",length(join2$Rank_2020plus_OG)),rep("DORGE_OG",length(join2$Rank_DORGE_OG)))
+ranks<-c(join2$Rank_DORGE_OG,join2$Rank_2020plus_OG,join2$Rank_TUSON_OG)
+categories<-c(rep("DORGE_OG",length(join2$Rank_DORGE_OG)),rep("Plus2020_OG",length(join2$Rank_2020plus_OG)),rep("TUSON_OG",length(join2$Rank_TUSON_OG)))
 combined<-data.frame("Ranks"=ranks,"Cat"=categories)
-my_comparisons <- list(c("DORGE_OG", "TUSON_OG"),c("DORGE_OG","Plus2020_OG"))
-
 pdf("Raw_figures/Figure_S2G_comparison_on_all_CGC_OGs.pdf", family="ArialMT", width=2.5, height=3)
+my_comparisons <- list(c("DORGE_OG", "TUSON_OG"),c("DORGE_OG","Plus2020_OG"))
 p<-ggboxplot(data = combined,x = "Cat", y="Ranks",color="black",outlier.size=0.2,width=0.8,fill="Cat",lwd=0.25)+ labs(x = "", y = "Rank")+ scale_x_discrete(labels= c("DORGE OG","20/20+ OG","TUSON OG")) + scale_y_continuous(trans = modulus_trans(0.08),breaks = c(0,100,300,num_OG_prediction,2000,5000,10000,20000))+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y = element_line(size = 0.5),axis.text.x = element_text(angle = 30, hjust = 1, colour = "black"),axis.text.y = element_text(angle = 0, hjust = 1, colour = "black"),panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))+ guides(fill=FALSE)+stat_compare_means(aes(label = paste0(..p.format..)),method.args = list(alternative = "l"),comparisons = my_comparisons,size=2)+stat_summary(fun.data = function(x) data.frame(y=15, size=2, label = paste("Median=",round(inverse(x),1))), geom="text")+ ggtitle("CGC-OG")
 suppressMessages(print(ggpar(p,legend.title = "")+ rremove("legend")))
 garbage <- dev.off()
@@ -256,11 +256,12 @@ inverse = function(yt){
 
 join2<-join[join$category_OG=="Core CGC-OG",]
 
-ranks<-c(join2$Rank_TUSON_OG,join2$Rank_2020plus_OG,join2$Rank_DORGE_OG)
-categories<-c(rep("TUSON_OG",length(join2$Rank_TUSON_OG)),rep("Plus2020_OG",length(join2$Rank_2020plus_OG)),rep("DORGE_OG",length(join2$Rank_DORGE_OG)))
+ranks<-c(join2$Rank_DORGE_OG,join2$Rank_2020plus_OG,join2$Rank_TUSON_OG)
+categories<-c(rep("DORGE_OG",length(join2$Rank_DORGE_OG)),rep("Plus2020_OG",length(join2$Rank_2020plus_OG)),rep("TUSON_OG",length(join2$Rank_TUSON_OG)))
 combined<-data.frame("Ranks"=ranks,"Cat"=categories)
-my_comparisons <- list(c("DORGE_OG", "TUSON_OG"),c("DORGE_OG","Plus2020_OG"))
+
 pdf("Raw_figures/Figure_S2H_comparison_on_Core_CGC_OGs.pdf", family="ArialMT", width=2.5, height=3)
+my_comparisons <- list(c("DORGE_OG", "TUSON_OG"),c("DORGE_OG","Plus2020_OG"))
 p<-ggboxplot(data = combined,x = "Cat", y="Ranks",color="black",outlier.size=0.2,width=0.8,fill="Cat",lwd=0.25)+ labs(x = "", y = "Rank")+ scale_x_discrete(labels= c("DORGE OG","20/20+ OG","TUSON OG")) + scale_y_continuous(trans = modulus_trans(0.08),breaks = c(0,100,300,num_OG_prediction,2000,5000,10000,20000))+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y = element_line(size = 0.5),axis.text.x = element_text(angle = 30, hjust = 1, colour = "black"),axis.text.y = element_text(angle = 0, hjust = 1, colour = "black"),panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))+ guides(fill=FALSE)+stat_compare_means(aes(label = paste0(..p.format..)),method.args = list(alternative = "l"),comparisons = my_comparisons,size=2)+stat_summary(fun.data = function(x) data.frame(y=15, size=2, label = paste("Median=",round(inverse(x),1))), geom="text")+ ggtitle("Core CGC-OG")
 suppressMessages(print(ggpar(p,legend.title = "")+ rremove("legend")))
 garbage <- dev.off()
