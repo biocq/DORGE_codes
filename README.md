@@ -86,9 +86,9 @@ We also provide a convenient executable script (**script_batch**) for running R 
 &nbsp;&nbsp;&nbsp;&nbsp;|---Figure S6 related to Figure 5.pdf  Rearranged Figure S6<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---Figure S7 related to Figure 5.pdf  Rearranged Figure S7<br/>
 |-Tables<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Data_file_S1                       Unprocessed raw tables that are used to make the final Data file S1<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Data_file_S2                       Unprocessed raw tables that are used to make the final Data file S2<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Table_1                            Unprocessed raw table of Table 1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Data_file_S1                       Raw tables that are used to make the final Data file S1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Data_file_S2                       Raw tables that are used to make the final Data file S2<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Table_1                            Raw table of Table 1<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---Data file S1.xlsx                  The final Data file S1<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---Data file S2.xlsx                  The final Data file S2<br/>
 
