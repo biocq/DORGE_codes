@@ -43,27 +43,26 @@ cd ..
 cd Tables
 cd Data_file_S1
 echo "Data file S1: Generating feature correlation table"
-Rscript Feature_correlation_code.R > /dev/null
+Rscript Feature_correlation_code.R
 echo "Data file S1: Generating drug perturbation table"
-Rscript DGB_data_format_code.R > /dev/null
+Rscript DGB_data_format_code.R
 
-cd ..
-cd Data_file_S2
-echo "Generating training feature set"
-Rscript feature_subset_generation.R > /dev/null
-echo "Data file S1: Formatting prediction result"
-Rscript DORGE_prediction_format_code.R > /dev/null
-echo "Data file S2: Evaluating different approaches for predicting TSG/OGs based on CGC genes"
-javac github_prediction_TSGOG_evaluation.java
-java github_prediction_TSGOG_evaluation
-echo "Data file S2: Evaluating different approaches for predicting cancer driver genes based on OncoKB genes"
-javac github_prediction_driver_evaluation_on_OncoKB.java
-java github_prediction_driver_evaluation_on_OncoKB
 cd ..
 
 cd Table_1
 echo "Table 1: Evaluating different approaches for predicting cancer driver genes based on CGC genes"
-javac github_prediction_driver_evaluation.java
-java github_prediction_driver_evaluation
+Rscript Table1_driver_gene_performance_on_CGC.R
 cd ..
+
+cd Data_file_S2
+echo "Generating training feature set"
+Rscript feature_subset_generation.R
+echo "Data file S1: Formatting prediction result"
+Rscript DORGE_prediction_format_code.R
+echo "Data file S2: Evaluating different approaches for predicting TSG/OGs based on CGC genes"
+Rscript Data_file_S2_TSG_OG_performance_on_CGC.R
+echo "Data file S2: Evaluating different approaches for predicting cancer driver genes based on OncoKB genes"
+Rscript Data_file_S2_driver_gene_performance_on_OncoKB.R
+cd ..
+
 cd ..

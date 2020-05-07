@@ -1,4 +1,4 @@
-Hugo Symbol	Entrez Gene ID	# of occurrence within resources (Column D-J)	OncoKB Annotated	Is Oncogene	Is Tumor Suppressor Gene	MSK-IMPACT	MSK-HEME	FOUNDATION ONE	FOUNDATION ONE HEME	Vogelstein	SANGER CGC(05/30/2017)
+"Hugo Symbol"	"Entrez Gene ID"	"# of occurrence within resources (Column D-J)"	"OncoKB Annotated"	"Is Oncogene"	"Is Tumor Suppressor Gene"	"MSK-IMPACT"	"MSK-HEME"	"FOUNDATION ONE"	"FOUNDATION ONE HEME"	Vogelstein	"SANGER CGC(05/30/2017)"
 LYL1	4066	2	No	No	No	No	No	No	Yes	No	Yes
 LYN	4067	4	Yes	Yes	No	Yes	Yes	Yes	No	No	No
 SH2D1A	4068	3	Yes	No	Yes	Yes	Yes	No	No	No	No

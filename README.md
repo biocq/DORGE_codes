@@ -9,7 +9,7 @@ Codes and necessary data used in the DORGE paper for generating figures and tabl
 
 Dependency on R packages can be found in R files and can be installed automatically. Versions of R packages available for troubleshooting are shown below.
 
-Package	Version  
+R Package	Versions  
 **circlize**	0.4.9  
 **ComplexHeatmap**	2.4.1  
 **cowplot**	1.0.0  
@@ -26,13 +26,13 @@ Package	Version
 **scales**	1.1.0  
 **VennDiagram**	1.6.20  
 
-*  **Java** (Optional if only you are only interested in regenerating figures)
+*  **Cytoscape** 3.8.0 or higher (Optional; If you are only interested in viewing network session file of Cytoscape)
 
-Sun Java SE Development Kit 7 or higher (https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html) is also needed. Setting JAVA_HOME may also be needed to launch Java at any folders(see http://www.sajeconsultants.com/how-to-set-java_home-on-mac-os-x/?utm_source=rss&utm_medium=rss&utm_campaign=how-to-set-java_home-on-mac-os-x).
+*  **Sun Java SDK 7 or higher ** (Optional; Dependency of Cytoscape; https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
+
+Setting JAVA_HOME may also be needed to launch Java at any folders(see http://www.sajeconsultants.com/how-to-set-java_home-on-mac-os-x/?utm_source=rss&utm_medium=rss&utm_campaign=how-to-set-java_home-on-mac-os-x).
 
 Bioconda users may also try 'conda install -c bioconda java-jdk' to install Java easily.
-
-*  **Cytoscape** 3.8.0 or higher (Optional if only you are only interested in viewing network session file of Cytoscape)
 
 ## Usages
 
@@ -105,7 +105,8 @@ Please cite the paper (DORGE: Discovery of Oncogenes and Tumor SuppressoR Genes 
 ## Changelog
 *  April 4. Update the README page.
 *  April 25. Update the codes.
+*  May 7. Update the codes.
 
 ## Issues
 
-Codes have been tested in R 4.0.0 and Java 12.0.2. If you encounter errors, please check the dependency or restart the R environment, given packages may change in future and methods in packages may conflict and unexpected errors may occur. If you still encounter any problems, please [file an issue](https://github.com/biocq/DORGE_paper/issues) along with a detailed description.
+Codes have been tested in R 4.0.0 and Java 1.8.0. If you encounter errors, please check the dependency or restart the R environment, given packages may change in future and methods in packages may conflict and unexpected errors may occur. If you still encounter any problems, please [file an issue](https://github.com/biocq/DORGE_paper/issues) along with a detailed description.
