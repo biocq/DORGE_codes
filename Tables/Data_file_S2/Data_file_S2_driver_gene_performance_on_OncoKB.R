@@ -3,7 +3,7 @@
 ###############################################################
 
 ###### Input: gene prediction from prediction folder: Gene lists in the prediction folder by different methods.
-###### Output: Table1_driver_gene_performance.txt: Data file S2.
+###### Output: Data_file_S2_OncoKB-gene_evaluation.txt: Data file S2.
 
 options(warn=-1)
 ################################### Data file S2 ###################################

@@ -1,4 +1,4 @@
-Feature group 4	0.03598111
+Feature group 4	0.05092647
 Missense_damaging_benign_ratio	3.042346e-57
 HiFI_missense_LoFI_missense_ratio	3.356104e-50
 Missense_mutations_kb	1.782076e-46
@@ -7,11 +7,7 @@ Missense_benign_ratio	1.570849e-36
 NonSilent_silent_ratio	4.781761e-31
 Missense_silent_ratio	5.040093e-24
 
-Feature group 12	0.02673901
-Super_enhancer_percentage	4.203639e-38
-Early_replication_timing	3.351988e-05
-
-Feature group 2	0.01815754
+Feature group 2	0.03160829
 pLI_score	7.203845e-75
 LoF_o_e_constraint	1.631373e-68
 Missense_o_e_constraint	1.818673e-54
@@ -24,14 +20,15 @@ PolyPhen_2_score	2.057858e-32
 log_gene_length	1.383339e-23
 log_CDS_length	7.076273e-16
 
-Feature group 14	0.0117496
+Feature group 12	0.02308643
+Super_enhancer_percentage	4.203639e-38
+Early_replication_timing	3.351988e-05
+
+Feature group 14	0.01225522
 Gene_body_hypermethylation_in_cancer	9.08312e-08
 Promoter_hypermethylation_in_cancer	9.052063e-05
 
-Feature group 8	0.006498262
-Recurrent_missense_fraction	0.6850891
-
-Feature group 19	0.005846887
+Feature group 19	0.007234723
 Height_of_H4K20me1_peaks	1.520349e-20
 H3K79me2_peak_length	1.724707e-18
 H3K36me3_peak_length	3.789547e-17
@@ -48,10 +45,3 @@ Height_of_H3K9ac_peaks	2.702941e-07
 Height_of_H3K4me3_peaks	3.670357e-06
 Height_of_H3K4me1_peaks	4.374716e-06
 Height_of_H3K4me2_peaks	4.948026e-06
-
-Feature group 11	0.005750037
-VEST_score	6.927234e-51
-Exon_conservation_phastCons_score	1.4914e-39
-Missense_MGAentropy	1.705795e-39
-Gene_age	1.006563e-16
-Family_member_count	0.4831824
