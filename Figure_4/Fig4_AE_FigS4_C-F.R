@@ -25,7 +25,7 @@ options(warn=-1)
 
 installed_pkgs <- installed.packages()
 
-pkgs <-  c("plyr","ggplot2","ggpubr")
+pkgs <-  c("ggpubr")
 
 if (length(setdiff(pkgs, installed_pkgs)) > 0) {
     install.packages(pkgs = setdiff(pkgs, installed_pkgs), repos = "http://cran.us.r-project.org")
@@ -33,12 +33,8 @@ if (length(setdiff(pkgs, installed_pkgs)) > 0) {
 
 suppressMessages(library("ggpubr"))
 
-TSG_threshold<-0.62485 #loose FPR=0.01
-OG_threshold<-0.7004394 #loose FPR=0.01
-
-#TSG_threshold<-0.8290429 #strict FPR=0.005
-#OG_threshold<-0.8679444 #strict FPR=0.005
-
+TSG_threshold<-0.6233374 #FPR=0.01
+OG_threshold<-0.6761319 #FPR=0.01
 
 ######### Figure 4A: ATAC-seq data evaluation for DORGE prediction #########
 

@@ -1,4 +1,34 @@
 echo "Generating Figures and tables, please be patient, < 2 min"
+
+cd Tables
+
+cd Data_file_S1
+echo "Data file S1: Generating feature correlation table"
+Rscript Feature_correlation_code.R
+echo "Data file S1: Generating drug perturbation table"
+Rscript DGB_data_format_code.R
+cd ..
+
+cd Data_file_S2
+echo "Generating training feature set"
+Rscript feature_subset_generation.R
+echo "Data file S1: Formatting prediction result"
+Rscript DORGE_prediction_format_code.R
+echo "Data file S2: Driver gene list generation"
+Rscript nonredundant_gene.R
+echo "Data file S2: Evaluating different approaches for predicting TSG/OGs based on CGC genes"
+Rscript Data_file_S2_TSG_OG_performance_on_CGC.R
+echo "Data file S2: Evaluating different approaches for predicting cancer driver genes based on OncoKB genes"
+Rscript Data_file_S2_driver_gene_performance_on_OncoKB.R
+cd ..
+
+cd Table_1
+echo "Table 1: Evaluating different approaches for predicting cancer driver genes based on CGC genes"
+Rscript Table1_driver_gene_performance_on_CGC.R
+cd ..
+
+cd ..
+
 cd Figure_1
 echo "Generating Figures 1 and S1"
 Rscript Fig1_AB_code.R > /dev/null
@@ -38,31 +68,4 @@ Rscript FigS5_ABC_code.R > /dev/null
 Rscript FigS5_D_code > /dev/null
 Rscript FigS5_EF_code.R > /dev/null
 Rscript FigS6_S7_code.R > /dev/null
-cd ..
-
-cd Tables
-cd Data_file_S1
-echo "Data file S1: Generating feature correlation table"
-Rscript Feature_correlation_code.R
-echo "Data file S1: Generating drug perturbation table"
-Rscript DGB_data_format_code.R
-
-cd ..
-
-cd Table_1
-echo "Table 1: Evaluating different approaches for predicting cancer driver genes based on CGC genes"
-Rscript Table1_driver_gene_performance_on_CGC.R
-cd ..
-
-cd Data_file_S2
-echo "Generating training feature set"
-Rscript feature_subset_generation.R
-echo "Data file S1: Formatting prediction result"
-Rscript DORGE_prediction_format_code.R
-echo "Data file S2: Evaluating different approaches for predicting TSG/OGs based on CGC genes"
-Rscript Data_file_S2_TSG_OG_performance_on_CGC.R
-echo "Data file S2: Evaluating different approaches for predicting cancer driver genes based on OncoKB genes"
-Rscript Data_file_S2_driver_gene_performance_on_OncoKB.R
-cd ..
-
 cd ..

@@ -45,11 +45,8 @@ suppressMessages(library("circlize"))
 suppressMessages(library("ComplexHeatmap"))
 
 
-TSG_threshold<-0.62485 #loose FPR=0.01
-OG_threshold<-0.7004394 #loose FPR=0.01
-
-#TSG_threshold<-0.8290429 #strict FPR=0.005
-#OG_threshold<-0.8679444 #strict FPR=0.005
+TSG_threshold<-0.6233374 #FPR=0.01
+OG_threshold<-0.6761319 #FPR=0.01
 
 ################################## Figure 2H Top15 non-CGC TSG/OG genes ###############################
 
@@ -95,7 +92,7 @@ allgene2<-allgene %>%
 
 
 ########## Left panel ##########
-PMIDs<-c("NA","22833098","28653885","22986368","31204176","NA","NA","27121567","29342219","22538187","30655376","24570593","26993606","NA","25699089")
+PMIDs<-c("NA","22833098","31204176","22986368","28653885","NA","NA","22538187","30655376","29342219","26993606","31965980","NA","24570593","NA")
 
 df_TSG<-cbind(prediction[,c("Gene","TSG_probability")],allgene2[,c("H3K4me3_peak_length_quantile","NonSilent_silent_ratio_quantile","VEST_score_quantile","Exon_conservation_phastCons_score","Super_enhancer_percentage")])
 prediction_nonCGC_TSG<-df_TSG[index_pTSG,]
@@ -112,7 +109,9 @@ garbage <- dev.off()
 
 ########## Right panel ##########
 
-PMIDs<-c("30367150","29629903","NA","20139090","31999936","NA","26019213","21283680","NA","27862697","28479419","31695024","29438696","28423522","22246670")
+PMIDs<-c("30367150","29629903","NA","20139090","31999936","NA","26019213","NA","21283680","31695024","28479419","29438696","28423522","27862697","21098698")
+
+#> prediction_top_OG$Gene
 
 df_OG<-cbind(prediction[,c("Gene","OG_probability")],allgene2[,c("Missense_entropy_quantile","Super_enhancer_percentage_quantile","pLI_score_quantile","ncGERP_score_quantile","Gene_body_hypermethylation_in_cancer_quantile","Gene_body_canyon_hypermethylation_in_cancer_quantile")])
 prediction_nonCGC_OG<-df_OG[index_pOG,]

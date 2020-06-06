@@ -44,9 +44,9 @@ TSG_features$short_name<-factor(TSG_features$short_name,levels=(c("H3K79me2","H3
 #group_values<-data.frame(group=c("Group 1","Group 2","Group 3","Group 4"),values=c(0.07106825,0.008291412,0.00680956,0.005146332))
 #group_values$group<-factor(group_values$group,levels=rev(c("Group 1","Group 2","Group 3","Group 4")))
 
-p01<-ggplot() + theme_void()+ geom_text(data = data.frame(x = 1, y = 2, label = "Group 1:\nAUPRC\nreduction = 0.0721"),aes(x, y, label = label),hjust = 0.0, vjust = 0.5, size = 23,color = "black",inherit.aes = FALSE)
-p02<-ggplot() + theme_void()+ geom_text(data = data.frame(x = 1, y = 2, label = "Group 2:\nAUPRC\nreduction = 0.0080"),aes(x, y, label = label),hjust = 0.0, vjust = 0.5, size = 23,color = "black",inherit.aes = FALSE)
-p04<-ggplot() + theme_void()+ geom_text(data = data.frame(x = 1, y = 2, label = "Group 3:\nAUPRC\nreduction = 0.0054"),aes(x, y, label = label),hjust = 0.0, vjust = 0.5, size = 23,color = "black",inherit.aes = FALSE)
+p01<-ggplot() + theme_void()+ geom_text(data = data.frame(x = 1, y = 2, label = "Group 1:\nAUPRC\nreduction = 0.0728"),aes(x, y, label = label),hjust = 0.0, vjust = 0.5, size = 23,color = "black",inherit.aes = FALSE)
+p02<-ggplot() + theme_void()+ geom_text(data = data.frame(x = 1, y = 2, label = "Group 2:\nAUPRC\nreduction = 0.0079"),aes(x, y, label = label),hjust = 0.0, vjust = 0.5, size = 23,color = "black",inherit.aes = FALSE)
+p04<-ggplot() + theme_void()+ geom_text(data = data.frame(x = 1, y = 2, label = "Group 3:\nAUPRC\nreduction = 0.0057"),aes(x, y, label = label),hjust = 0.0, vjust = 0.5, size = 23,color = "black",inherit.aes = FALSE)
 
 p1<-ggbarplot(TSG_features[TSG_features$hm=="length",],x="short_name",y="minuslogP",sort.val = "desc",fill = "darkgreen",color="transparent",sort.by.groups = TRUE,width = 0.7)+ theme_bw() + theme(axis.ticks.y = element_line(size = 0.5),plot.margin = margin(0.01, 0.01, 0.01, 0.01),text = element_text(size=35), panel.border = element_blank(),panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.line = element_line(colour ="black"),axis.text.y = element_text(colour = "black", size = 35),axis.text.x = element_text(angle = 30, size = 35, hjust = 1, colour = "black"))+labs(x="Peak length",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ rremove("legend")+ rremove("x.ticks")+ rremove("x.text")+ggtitle("Histone modification")
 
@@ -94,13 +94,13 @@ OG_features$short_name<-OG_features$Feature
 OG_features$short_name<-gsub(" peaks", "", OG_features$short_name)
 OG_features$short_name<-gsub("Height of ", "", OG_features$short_name)
 OG_features$short_name<-gsub(" peak length", "", OG_features$short_name)
-OG_features$short_name<-factor(OG_features$short_name,levels=(c("H3K79me2","H3K36me3","H4K20me1","H3K27ac","H3K4me1","H3K9ac","H3K4me2","H3K4me3")))
+OG_features$short_name<-factor(OG_features$short_name,levels=(c("H3K9me2","H3K9me3","H3K27me3")))
 
-p01<-ggplot() + theme_void()+ geom_text(data = data.frame(x = 1, y = 1, label = "Group 1:\nAUPRC\nreduction = 0.0509"),aes(x, y, label = label),hjust = 0.0, vjust = 0.5, size = 23,color = "black",inherit.aes = FALSE)
-p02<-ggplot() + theme_void()+ geom_text(data = data.frame(x = 1, y = 1, label = "Group 2:\nAUPRC\nreduction = 0.0316"),aes(x, y, label = label),hjust = 0.0, vjust = 0.0, size = 23,color = "black",inherit.aes = FALSE)
-p03<-ggplot() + theme_void()+ geom_text(data = data.frame(x = 1, y = 1, label = "Group 3:\nAUPRC\nreduction = 0.0231"),aes(x, y, label = label),hjust = 0.0, vjust = 0.0, size = 23,color = "black",inherit.aes = FALSE)
-p04<-ggplot() + theme_void()+ geom_text(data = data.frame(x = 1, y = 1, label = "Group 4:\nAUPRC\nreduction = 0.0123"),aes(x, y, label = label),hjust = 0.0, vjust = 0.0, size = 23,color = "black",inherit.aes = FALSE)
-p05<-ggplot() + theme_void()+ geom_text(data = data.frame(x = 1, y = 1, label = "Group 5:\nAUPRC\nreduction = 0.0072"),aes(x, y, label = label),hjust = 0.0, vjust = 0.0, size = 23,color = "black",inherit.aes = FALSE)
+p01<-ggplot() + theme_void()+ geom_text(data = data.frame(x = 1, y = 1, label = "Group 1:\nAUPRC\nreduction = 0.0373"),aes(x, y, label = label),hjust = 0.0, vjust = 0.5, size = 23,color = "black",inherit.aes = FALSE)
+p02<-ggplot() + theme_void()+ geom_text(data = data.frame(x = 1, y = 1, label = "Group 2:\nAUPRC\nreduction = 0.0287"),aes(x, y, label = label),hjust = 0.0, vjust = 0.0, size = 23,color = "black",inherit.aes = FALSE)
+p03<-ggplot() + theme_void()+ geom_text(data = data.frame(x = 1, y = 1, label = "Group 3:\nAUPRC\nreduction = 0.0270"),aes(x, y, label = label),hjust = 0.0, vjust = 0.0, size = 23,color = "black",inherit.aes = FALSE)
+p04<-ggplot() + theme_void()+ geom_text(data = data.frame(x = 1, y = 1, label = "Group 4:\nAUPRC\nreduction = 0.0133"),aes(x, y, label = label),hjust = 0.0, vjust = 0.0, size = 23,color = "black",inherit.aes = FALSE)
+p05<-ggplot() + theme_void()+ geom_text(data = data.frame(x = 1, y = 1, label = "Group 5:\nAUPRC\nreduction = 0.0061"),aes(x, y, label = label),hjust = 0.0, vjust = 0.0, size = 23,color = "black",inherit.aes = FALSE)
 
 
 p1<-ggbarplot(OG_features[OG_features$Group=="Group 1",],x="Feature",y="minuslogP",sort.val = "desc",fill = "darkred",color="white",sort.by.groups = TRUE,width = 0.8)+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y = element_line(size = 0.5),plot.margin = margin(0.01, 0.01, 0.01, 0.01),text = element_text(size=35),panel.border = element_blank(),panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.ticks.length=unit(0.5, "cm"),axis.line = element_line(colour ="black"),axis.text.y = element_text(colour = "black", size = 35),axis.text.x = element_text(angle = 30, size = 35, hjust = 1, colour = "black"))+labs(x="",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ rremove("legend")+ggtitle("Missense mutations")
@@ -110,7 +110,6 @@ p2<-ggbarplot(OG_features[OG_features$Group=="Group 2",],x="Feature",y="minuslog
 p3<-ggbarplot(OG_features[OG_features$Group=="Group 3",],x="Feature",y="minuslogP",sort.val = "desc",fill = "coral",color="transparent",sort.by.groups = TRUE,width = 0.7)+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y = element_line(size = 0.5),plot.margin = margin(0.01, 0.01, 0.01, 0.01),text = element_text(size=35),panel.border = element_blank(),panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.ticks.length=unit(0.5, "cm"),axis.line = element_line(colour ="black"),axis.text.y = element_text(colour = "black", size = 35),axis.text.x = element_text(angle = 30, size = 35, hjust = 1, colour = "black"))+labs(x="",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ rremove("legend")+ggtitle("Super enhancer")
 
 p4<-ggbarplot(OG_features[OG_features$Group=="Group 4",],x="Feature",y="minuslogP",sort.val = "desc",fill = "orange",color="transparent",sort.by.groups = TRUE,width = 0.5)+ theme_bw() + theme(axis.ticks.x = element_line(size = 0.5),axis.ticks.y = element_line(size = 0.5),plot.margin = margin(0.01, 0.01, 0.01, 0.01),text = element_text(size=35),panel.border = element_blank(),panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.ticks.length=unit(0.5, "cm"),axis.line = element_line(colour ="black"),axis.text.y = element_text(colour = "black", size = 35),axis.text.x = element_text(angle = 30, size = 35, hjust = 1, colour = "black"))+labs(x="",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ rremove("legend")+ggtitle("DNA methylation")
-
 
 p6<-ggbarplot(OG_features[OG_features$hm=="length",],x="short_name",y="minuslogP",sort.val = "desc",fill = "darkgreen",color="transparent",sort.by.groups = TRUE,width = 0.75)+ theme_bw() + theme(axis.ticks.y = element_line(size = 0.5),plot.margin = margin(0.01, 0.01, 0.01, 0.01),text = element_text(size=35), panel.border = element_blank(),panel.grid.major = element_blank(),axis.ticks.length=unit(0.5, "cm"),panel.grid.minor = element_blank(),axis.line = element_line(colour ="black"),axis.text.y = element_text(colour = "black", size = 35),axis.text.x = element_text(angle = 30, size = 35, hjust = 1, colour = "black"))+labs(x="Peak length",y=expression("-log"[10]~italic(P)~"-value"))+ guides(fill=guide_legend(title=""))+ rremove("legend")+ rremove("x.ticks")+ rremove("x.text")+ggtitle("Histone modification")
 
@@ -130,12 +129,12 @@ combined<-plot_grid(
 		p04,
 		plot_grid(
 			plot_grid(p6, p7, labels = "", align = 'hv', rel_heights=c(1,1),nrow=2)
-			,NULL,ncol=2, align = 'h',rel_widths=c(1,1.3)
+			,NULL,ncol=2, align = 'h',rel_widths=c(1,4.1)
 		), 
 		p05,
 		axis="l", labels = "", align = 'v', rel_heights=c(0.0036,0.005, 0.0036,0.005, 0.0030,0.005, 0.0025,0.004, 0.0036, 0.005),nrow=10
 	),
-	NULL, labels = "", rel_widths = c(4,4,4.),ncol=3
+	NULL, labels = "", rel_widths = c(4,4,4),ncol=3
 )
 
 

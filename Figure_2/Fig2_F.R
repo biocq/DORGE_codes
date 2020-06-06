@@ -24,15 +24,12 @@ if (length(setdiff(pkgs, installed_pkgs)) > 0) {
 suppressMessages(library("ggplot2"))
 
 
-TSG_threshold<-0.62485 #loose FPR=0.01
-OG_threshold<-0.7004394 #loose FPR=0.01
-
-#TSG_threshold<-0.8290429 #strict FPR=0.005
-#OG_threshold<-0.8679444 #strict FPR=0.005
+TSG_threshold<-0.6233374 #FPR=0.01
+OG_threshold<-0.6761319 #FPR=0.01
 
 ################################### Figure 2F ###################################
 #setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_2");
-CRISPR_specific <- read.table("data/TSG_prediction-lr_enet_CRISPR-only_FPR_0.01.csv", header=T, sep=",")
+CRISPR_specific <- read.table("data/TSG_prediction-lr_enet.CRISPR-only_FPR_0.01.csv", header=T, sep=",")
 Predicted_genes_CRISPR_features<-as.character(CRISPR_specific[,1])
 prediction <- read.table("../DORGE_prediction.txt", header=T, sep="\t",fill=TRUE,quote = "")
 index_TSG_predicted_CGC_TSGs_all_feature<-which(prediction$TSG_probability>TSG_threshold & prediction$TSG_all=="1")
@@ -43,7 +40,7 @@ index_CGC_TSG<-which(prediction$TSG_all==1)
 Predicted_CGC_TSGs_CRISPR_features_only<-all_genes[intersect(index_predicted_CRISPR_genes_in_all_genes,index_CGC_TSG)]
 #CRISPR_specific_genes<-setdiff(Predicted_CGC_TSGs_CRISPR_features_only,Predicted_CGC_TSGs_all_features)
 
-CRISPR_specific <- read.table("data/OG_prediction-lr_enet_CRISPR-only_FPR_0.01.csv", header=T, sep=",")
+CRISPR_specific <- read.table("data/OG_prediction-lr_enet.CRISPR-only_FPR_0.01.csv", header=T, sep=",")
 Predicted_genes_CRISPR_features<-as.character(CRISPR_specific[,1])
 prediction <- read.table("../DORGE_prediction.txt", header=T, sep="\t",fill=TRUE,quote = "")
 index_OG_predicted_CGC_OGs_all_feature<-which(prediction$OG_probability>OG_threshold & prediction$OG_all=="1")

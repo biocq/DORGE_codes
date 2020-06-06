@@ -11,7 +11,6 @@ options(warn=-1)
 ################################### Data file S2 ###################################
 #setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Tables/Data_file_S2/");
 
-
 anno<-read.table("../../Gene_set_new.txt",header=T,sep="\t");
 genes<-as.character(anno[,1])
 NGs<-genes[which(as.character(anno[,4])=="1")]
@@ -85,9 +84,7 @@ colnames(result)<-c("Method","#","Sn","Sp","Precision","Accuracy")
 result$Accuracy<-as.numeric(result$Accuracy)
 result<-result[c(order(-result[1:4,]$Accuracy),c(6,5)),]
 
-write.table(result,"TSG_gene_performance.txt",sep="\t",quote=F,row.names=F,col.names=T)
-
-
+write.table(result,"Data_file_S2_TSG_gene_performance.txt",sep="\t",quote=F,row.names=F,col.names=T)
 
 drivers<-genes[which(as.character(anno[,6])=="1")]
 result<-c()
@@ -158,4 +155,4 @@ colnames(result)<-c("Method","#","Sn","Sp","Precision","Accuracy")
 result$Accuracy<-as.numeric(result$Accuracy)
 result<-result[c(order(-result[1:4,]$Accuracy),c(5,6)),]
 
-write.table(result,"OG_gene_performance.txt",sep="\t",quote=F,row.names=F,col.names=T)
+write.table(result,"Data_file_S2_OG_gene_performance.txt",sep="\t",quote=F,row.names=F,col.names=T)

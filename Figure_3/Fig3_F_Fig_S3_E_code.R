@@ -29,11 +29,8 @@ suppressMessages(library("dplyr"))
 suppressMessages(library("ggpubr"))
 suppressMessages(library("scales"))
 
-TSG_threshold<-0.62485 #loose FPR=0.01
-OG_threshold<-0.7004394 #loose FPR=0.01
-
-#TSG_threshold<-0.8290429 #strict FPR=0.005
-#OG_threshold<-0.8679444 #strict FPR=0.005
+TSG_threshold<-0.6233374 #FPR=0.01
+OG_threshold<-0.6761319 #FPR=0.01
 
 ######### Figure 3F: Scatter plot of H3K4me3 peak length and gene-body differential methylation for DORGE-predicted novel genes #########
 # John and Draper's modulus transformation

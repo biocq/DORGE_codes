@@ -22,6 +22,10 @@ if (length(setdiff(pkgs, installed_pkgs)) > 0) {
 suppressMessages(library(plyr))
 
 options(warn=-1)
+
+TSG_threshold<-0.6233374 #FPR=0.01
+OG_threshold<-0.6761319 #FPR=0.01
+
 ################################### Data file S2: Formatted prediction results ###################################
 #setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Tables/Data_file_S2/");
 
@@ -38,8 +42,8 @@ OG_CGC<-anno[,6]
 
 index_TSG<-which(TSG_CGC=="1")
 index_OG<-which(OG_CGC=="1")
-index_pTSG<-which((join$TSG_probability>0.62485 & TSG_CGC!="1"))#FPR<0.01
-index_pOG<-which((join$OG_probability>0.7004394 & OG_CGC!="1"))#FPR<0.01
+index_pTSG<-which((join$TSG_probability>TSG_threshold & TSG_CGC!="1"))#FPR<0.01
+index_pOG<-which((join$OG_probability>OG_threshold & OG_CGC!="1"))#FPR<0.01
 
 
 Novel_TSG<-as.character(join[index_pTSG,1])
@@ -48,8 +52,8 @@ write.table(Novel_TSG,"../Novel_DORGE_predicted_TSGs.txt",sep="\t",quote=F,row.n
 write.table(Novel_OG,"../Novel_DORGE_predicted_OGs.txt",sep="\t",quote=F,row.names=F,col.names=F)
 
 
-index_pTSG<-which((join$TSG_probability>0.62485))#FPR<0.01
-index_pOG<-which((join$OG_probability>0.7004394))#FPR<0.01
+index_pTSG<-which((join$TSG_probability>TSG_threshold))#FPR<0.01
+index_pOG<-which((join$OG_probability>OG_threshold))#FPR<0.01
 Novel_TSG<-as.character(join[index_pTSG,1])
 Novel_OG<-as.character(join[index_pOG,1])
 write.table(Novel_TSG,"prediction/All_DORGE_predicted_TSGs.txt",sep="\t",quote=F,row.names=F,col.names=F)

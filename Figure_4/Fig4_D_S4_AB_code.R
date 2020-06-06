@@ -19,7 +19,7 @@ options(warn=-1)
 
 installed_pkgs <- installed.packages()
 
-pkgs <-  c("plyr","ggpubr","ggplot2")
+pkgs <-  c("plyr","ggpubr")
 
 
 if (length(setdiff(pkgs, installed_pkgs)) > 0) {
@@ -27,16 +27,13 @@ if (length(setdiff(pkgs, installed_pkgs)) > 0) {
 }
 
 suppressMessages(library("ggpubr"))
-suppressMessages(library(plyr))
+suppressMessages(library("plyr"))
 
-TSG_threshold<-0.62485 #loose FPR=0.01
-OG_threshold<-0.7004394 #loose FPR=0.01
+TSG_threshold<-0.6233374 #FPR=0.01
+OG_threshold<-0.6761319 #FPR=0.01
 
-#TSG_threshold<-0.8290429 #strict FPR=0.005
-#OG_threshold<-0.8679444 #strict FPR=0.005
 ##################### Figure 4A, S4A and S4B: Survival data evaluation #####################
-
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_4");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_4");
 
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
