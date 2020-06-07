@@ -64,7 +64,7 @@ log10_join2<- cbind(join2,-log10(join2[,2:5]))
 names(log10_join2)<-c("Term" ,"Pvalue_T","Adjusted_T","Pvalue_O","Adjusted_O","log10_Pvalue_T","log10_Adjusted_T","log10_Pvalue_O","log10_Adjusted_O")
 index_diff<-which((log10_join2$log10_Adjusted_T-log10_join2$log10_Adjusted_O)>8| (log10_join2$log10_Adjusted_O-log10_join2$log10_Adjusted_T)>4)
 index_consistent<-which(log10_join2$log10_Adjusted_T>4 & log10_join2$log10_Adjusted_O>4)
-log10_join2<-log10_join2[c(which(log10_join2$Term=="Apoptosis"|log10_join2$Term=="Cell cycle"),union(index_diff,index_consistent)),]
+log10_join2<-log10_join2[c(which(log10_join2$Term=="Apoptosis"|log10_join2$Term=="Cell cycle"),union(index_diff,index_consistent)),]# "Apoptosis" and "Cell cycle" are positive controls for TSGs and OGs, respectively
 
 dat_plot<-log10_join2[,c(1,7,9)]
 dat_plot2<-dat_plot[,c(3,2)]
@@ -97,7 +97,7 @@ log10_join2<- cbind(join2,-log10(join2[,2:5]))
 names(log10_join2)<-c("Term" ,"Pvalue_T","Adjusted_T","Pvalue_O","Adjusted_O","log10_Pvalue_T","log10_Adjusted_T","log10_Pvalue_O","log10_Adjusted_O")
 index_diff<-which((log10_join2$log10_Adjusted_T-log10_join2$log10_Adjusted_O)>8| (log10_join2$log10_Adjusted_O-log10_join2$log10_Adjusted_T)>4)
 index_consistent<-which(log10_join2$log10_Adjusted_T>8 & log10_join2$log10_Adjusted_O>8)
-log10_join2<-log10_join2[c(which(log10_join2$Term=="Apoptosis"|log10_join2$Term=="Cell cycle"),union(index_diff,index_consistent)),]
+log10_join2<-log10_join2[c(which(log10_join2$Term=="Apoptosis"|log10_join2$Term=="Cell cycle"),union(index_diff,index_consistent)),]# "Apoptosis" and "Cell cycle" are positive controls for TSGs and OGs, respectively
 
 
 dat_plot_2<-log10_join2[,c(1,7,9)]
@@ -161,10 +161,10 @@ names(dat_plot_2)<-c("Term","log10_Pvalue_T2","log10_Pvalue_O2");
 combined<-join(dat_plot,dat_plot_2,type = "left",by="Term")
 
 pdf("Raw_figures/Figure_S3B_KEGG_correlation_TSG.pdf", family="ArialMT", width=4, height=4)
-suppressMessages(print(ggscatter(combined, x = "log10_Pvalue_T", y = "log10_Pvalue_T2",add = "reg.line",add.params = list(color = "purple", fill = "purple"),xlab="-log10 P-value of KEGG\nenrichment for all features predicted novel TSGs",ylab="-log10 P-value of KEGG\nenrichment for non-Epigenetic\nfeatures predicted novel TSGs") +geom_text_repel(data = combined[(combined$log10_Pvalue_T-combined$log10_Pvalue_T2>2) & (combined$log10_Pvalue_T>10),],aes(label=Term,x=log10_Pvalue_T, y=log10_Pvalue_T2), family="ArialMT",size= 3,color="purple",segment.size= 0.3,force = 15,segment.color= "grey10") + stat_cor(method ="spearman",cor.coef.name="rho",digits=2,label.sep="\n", label.x = 3, label.y = 3.5))) # Add correlation coefficient
+suppressMessages(print(ggscatter(combined, x = "log10_Pvalue_T", y = "log10_Pvalue_T2",add = "reg.line",add.params = list(color = "purple", fill = "purple"),xlab="-log10 P-value of KEGG\nenrichment for all features\npredicted novel TSGs",ylab="-log10 P-value of KEGG\nenrichment for non-Epigenetic\nfeatures predicted novel TSGs") +geom_text_repel(data = combined[(combined$log10_Pvalue_T-combined$log10_Pvalue_T2>2) & (combined$log10_Pvalue_T>10),],aes(label=Term,x=log10_Pvalue_T, y=log10_Pvalue_T2), family="ArialMT",size= 3,color="purple",segment.size= 0.3,force = 15,segment.color= "grey10") + stat_cor(method ="spearman",cor.coef.name="rho",digits=2,label.sep="\n", label.x = 3, label.y = 3.5))) # Add correlation coefficient
 dev.off()
 
 ##### Figure S3C: Correlation of KEGG enrichment P-values between novel OGs predicted on all features and without epigenetic features ######
 pdf("Raw_figures/Figure_S3C_KEGG_correlation_OG.pdf", family="ArialMT", width=4, height=4)
-suppressMessages(print(ggscatter(combined, x = "log10_Pvalue_O", y = "log10_Pvalue_O2",add = "reg.line",xlab="-log10 P-value of KEGG enrichment\nfor all features predicted novel OGs",ylab="-log10 P-value of KEGG\nenrichment for non-Epigenetic\nfeatures predicted novel OGs",add.params = list(color = "red", fill = "red"))+geom_text_repel(data = combined[(combined$log10_Pvalue_O-combined$log10_Pvalue_O2>2) & (combined$log10_Pvalue_O>7),],aes(label=Term,x=log10_Pvalue_O, y=log10_Pvalue_O2), family="ArialMT",size= 3,color="red",segment.size= 0.3,force = 15,segment.color= "grey10")+ylim(0,8)+stat_cor(method ="spearman",cor.coef.name="rho",digits=2,label.sep="\n", label.x = 10, label.y = 5))) # Add correlation coefficient
+suppressMessages(print(ggscatter(combined, x = "log10_Pvalue_O", y = "log10_Pvalue_O2",add = "reg.line",xlab="-log10 P-value of KEGG\nenrichment for all features\npredicted novel OGs",ylab="-log10 P-value of KEGG\nenrichment for non-Epigenetic\nfeatures predicted novel OGs",add.params = list(color = "red", fill = "red"))+geom_text_repel(data = combined[(combined$log10_Pvalue_O-combined$log10_Pvalue_O2>2) & (combined$log10_Pvalue_O>7),],aes(label=Term,x=log10_Pvalue_O, y=log10_Pvalue_O2), family="ArialMT",size= 3,color="red",segment.size= 0.3,force = 15,segment.color= "grey10")+ylim(0,8)+stat_cor(method ="spearman",cor.coef.name="rho",digits=2,label.sep="\n", label.x = 10, label.y = 5))) # Add correlation coefficient
 dev.off()
