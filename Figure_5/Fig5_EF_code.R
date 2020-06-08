@@ -39,7 +39,7 @@ TSG_threshold<-0.6233374 #FPR=0.01
 OG_threshold<-0.6761319 #FPR=0.01
 
 ######### Figure 5E and 5F: Gene enrichment in Drug-compound network #########
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_5");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_5");
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
 prediction <- read.table("../DORGE_prediction.txt", header=T, sep="\t",fill=TRUE,quote = "")
@@ -255,7 +255,7 @@ fisher_high_LOF_o_e_constraint_Zscore_genes<-matrix(c(length(high_LOF_o_e_constr
 
 pval_knownTSG<-fisher.test(round(fisher_knownTSG*200/length(index_TSG)), alternative = "g")$p.value
 pval_knownOG<-fisher.test(round(fisher_knownOG*200/length(index_OG)), alternative = "g")$p.value
-pval_CGCdual<-fisher.test(fisher_CGCdual*200/length(index_dual), alternative = "g")$p.value
+pval_CGCdual<-fisher.test(round(fisher_CGCdual*200/length(index_dual)), alternative = "g")$p.value
 pval_prioritizedTSG<-fisher.test(round(fisher_prioritizedTSG*200/length(index_pTSG)), alternative = "g")$p.value
 pval_prioritizedOG<-fisher.test(round(fisher_prioritizedOG*200/length(index_pOG)), alternative = "g")$p.value
 pval_prioritized_dual<-fisher.test(round(fisher_prioritized_dual*200/length(index_pdual)), alternative = "g")$p.value

@@ -33,7 +33,7 @@ OG_threshold<-0.6761319 #FPR=0.01
 
 ######### Figure S6 ABC: Network metrics in PPI network #########
 
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Figure_5");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Figure_5");
 anno <- read.table("../Gene_set_new.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(anno)<-c("Gene","TSG_core","OG_core","NG","TSG_all","OG_all");
 prediction <- read.table("../DORGE_prediction.txt", header=T, sep="\t",fill=TRUE,quote = "")

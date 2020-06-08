@@ -94,10 +94,10 @@ index_DORGE_predicted_dual_driver_genes<-intersect(index_DORGE_predicted_driver_
 length(index_DORGE_predicted_dual_driver_genes)#457
 
 #The probability of the predicted novel dual function gene occurence in the modules
-binom.test(90,90,p=length(index_DORGE_predicted_dual_driver_genes)/1201)$p.value # ?1.71233e-38
+binom.test(64,64,p=length(index_DORGE_predicted_dual_driver_genes)/length(index_DORGE_predicted_driver_genes))$p.value # 6.656864e-27
 
 #The probability of the CGC-dual function gene occurence in the modules
-binom.test(14,90,p=length(index_DORGE_predicted_CGC_dual_driver)/1201)$p.value #?3.949327e-06
+binom.test(8,64,p=length(index_DORGE_predicted_CGC_dual_driver)/length(index_DORGE_predicted_driver_genes))$p.value # 0.002325191
 
 
 #write.table(as.character(anno[union(which(anno$OG_probability> OG_threshold),which(anno$TSG_probability>TSG_threshold)),1]),"DORGE_predicted_driver_genes.txt",sep="\t",quote=F,row.names=F,col.names=F)

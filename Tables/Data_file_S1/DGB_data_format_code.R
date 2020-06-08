@@ -17,7 +17,7 @@
 options(warn=-1)
 ################################### Data file S1: Formatted gene expression UP/down data from CMap and CREEDS collection in the Drug Gene Budger (DGB) web portal
  ###################################
-#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/Figure_codes/Tables/Data_file_S1/");
+#setwd("/Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Tables/Data_file_S1/");
 
 data <- read.table("../../Figure_5/data/DGB/DGB_creeds_downregulated_combined.txt", header=T, sep="\t",fill=TRUE,quote = "")
 colnames(data)<-c("Gene","Gene ID","Gene type","DORGE_OG_score","Drug Name","CREEDS ID","GEO ID","DrugBank ID","P-value","Q-value","Log2(fold Change)","Specificity");
