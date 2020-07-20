@@ -64,27 +64,20 @@ We also provide a convenient executable script (**script_batch**) for running R 
 &nbsp;&nbsp;&nbsp;&nbsp;|---Figure_1.pdf                       Assembled Figure 1<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---Figure S1 related to Figure 1.pdf  Assembled Figure S1<br/>
 |-Figure_2<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Raw_figures                        Unprocessed raw figures related to Figure 2 and Figure S2<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Raw_figures                        Unprocessed raw figures related to Figure 2 and Figure S3<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---data					                      Processed data used for figure generation<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---Figure_2.pdf                       Assembled Figure 2<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---Figure S2 related to Figure 2.pdf  Assembled Figure S2<br/>
 |-Figure_3<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Raw_figures                        Unprocessed raw figures related to Figure 3 and Figure S3<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Raw_figures                        Unprocessed raw figures related to Figure 3 and Figure S4<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---data					                      Processed data used for figure generation<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---Figure_3.pdf                       Assembled Figure 3<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---Figure S3 related to Figure 3.pdf  Assembled Figure S3<br/>
 |-Figure_4<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Raw_figures                        Unprocessed raw figures related to Figure 4 and Figure S4<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Raw_figures                        Unprocessed raw figures related to Figure 4 and Figure S5-S6<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---data					                      Processed data used for figure generation<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---Figure_4.pdf                       Assembled Figure 4<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---Figure S4 related to Figure 4.pdf  Assembled Figure S4<br/>
-|-Figure_5<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Raw_figures                        Unprocessed raw figures related to Figure 5 and Figure S5-S7<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---data					                      Processed data used for figure generation<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Figure_5.pdf                       Assembled Figure 5<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Figure S5 related to Figure 5.pdf  Assembled Figure S5<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Figure S6 related to Figure 5.pdf  Rearranged Figure S6<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Figure S7 related to Figure 5.pdf  Rearranged Figure S7<br/>
 |-Tables<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---Data_file_S1                       Raw tables that are used to make the final Data file S1<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---Data_file_S2                       Raw tables that are used to make the final Data file S2<br/>
@@ -106,6 +99,7 @@ Please cite the paper (DORGE: Discovery of Oncogenes and Tumor SuppressoR Genes 
 *  April 4. Update the README page.
 *  April 25. Update the codes.
 *  May 7. Update the codes.
+*  July 20. Update the codes.
 
 ## Issues
 
