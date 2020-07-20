@@ -32,40 +32,33 @@ cd ..
 cd Figure_1
 echo "Generating Figures 1 and S1"
 Rscript Fig1_AB_code.R > /dev/null
-Rscript Fig1_C-H_S1A-K_S1M_code.R > /dev/null
-Rscript FigS1_L_and_N_code.R > /dev/null
+Rscript Fig1_C-H_S1A-K_code.R > /dev/null
 cd ..
 cd Figure_2
 echo "Generating Figures 2 and S2"
-Rscript Fig2_ADE_code.R > /dev/null
-Rscript Fig2_BC_code.R > /dev/null
+Rscript Fig2_ABC_code.R > /dev/null
+Rscript Fig2_DE_code.R > /dev/null
 Rscript Fig2_F.R > /dev/null
-Rscript Fig2_G_and_FigS3_ABC_code.R > /dev/null
-Rscript Fig2_HI_data_file_S1_code.R > /dev/null
+Rscript Fig2_GH_code.R > /dev/null
+Rscript Fig2_IJ_data_file_S1_code.R > /dev/null
 Rscript FigS2_code.R > /dev/null
 cd ..
 cd Figure_3
 echo "Generating Figures 3 and S3"
-Rscript Fig3_AB_code.R > /dev/null
-Rscript Fig3_CE_code.R > /dev/null
-Rscript Fig3_D_and_FigS3_D_code.R > /dev/null
-Rscript Fig3_F_Fig_S3_E_code.R > /dev/null
-Rscript FigS3_FGH_code.R > /dev/null
+Rscript Fig3_A_and_FigS4_ABC_code.R > /dev/null
+Rscript Fig3_BF_FigS4_DGH.R > /dev/null
+Rscript Fig3_CD_code.R > /dev/null
+Rscript Fig3_E_S4_EF_code.R > /dev/null
+Rscript Fig3_G_code.R > /dev/null
 cd ..
 cd Figure_4
-echo "Generating Figures 4 and S4"
-Rscript Fig4_AE_FigS4_C-F.R > /dev/null
-Rscript Fig4_BC_code.R > /dev/null
-Rscript Fig4_D_S4_AB_code.R > /dev/null
-Rscript Fig4_F_code.R > /dev/null
-cd ..
-cd Figure_5
-echo "Generating Figures 5 and S5-7"
-Rscript Fig5_AB_code.R > /dev/null
-Rscript Fig5_CD_code.R > /dev/null
-Rscript Fig5_EF_code.R > /dev/null
+echo "Generating Figures 4 and S5"
+Rscript Fig4_AB_code.R > /dev/null
+Rscript Fig4_CD_code.R > /dev/null
+Rscript Fig4_EF_code.R > /dev/null
 Rscript FigS5_ABC_code.R > /dev/null
-Rscript FigS5_D_code > /dev/null
+Rscript FigS5_D_code.R > /dev/null
 Rscript FigS5_EF_code.R > /dev/null
-Rscript FigS6_S7_code.R > /dev/null
+Rscript FigS6_code > /dev/null
 cd ..
+
