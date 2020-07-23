@@ -67,17 +67,18 @@ We also provide a convenient executable script (**script_batch**) for running R 
 &nbsp;&nbsp;&nbsp;&nbsp;|---Raw_figures                        Unprocessed raw figures related to Figure 2 and Figure S3<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---data					                      Processed data used for figure generation<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---Figure_2.pdf                       Assembled Figure 2<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Figure S2 related to Figure 2.pdf  Assembled Figure S2<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Figure S3 related to Figure 2.pdf  Assembled Figure S3<br/>
 |-Figure_3<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---Raw_figures                        Unprocessed raw figures related to Figure 3 and Figure S4<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---data					                      Processed data used for figure generation<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---Figure_3.pdf                       Assembled Figure 3<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Figure S3 related to Figure 3.pdf  Assembled Figure S3<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Figure S4 related to Figure 3.pdf  Assembled Figure S4<br/>
 |-Figure_4<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---Raw_figures                        Unprocessed raw figures related to Figure 4 and Figure S5-S6<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---data					                      Processed data used for figure generation<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---Figure_4.pdf                       Assembled Figure 4<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Figure S4 related to Figure 4.pdf  Assembled Figure S4<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Figure S5 related to Figure 4.pdf  Assembled Figure S5<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Figure S6 related to Figure 4.pdf  Assembled Figure S6<br/>
 |-Tables<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---Data_file_S1                       Raw tables that are used to make the final Data file S1<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|---Data_file_S2                       Raw tables that are used to make the final Data file S2<br/>
@@ -92,7 +93,7 @@ All_features.csv                        The feature profile<br/>
 
 ## Citation
 
-Please cite the paper (DORGE: Discovery of Oncogenes and Tumor SuppressoR Genes Using Genetic and Epigenetic Features, now submitted to Science Advances) if the resources are used elsewhere.
+Please cite the paper (DORGE: Discovery of Oncogenes and Tumor SuppressoR Genes Using Genetic and Epigenetic Features, https://www.biorxiv.org/content/10.1101/2020.07.21.213702v1) if the resources are used elsewhere.
 
 
 ## Changelog
