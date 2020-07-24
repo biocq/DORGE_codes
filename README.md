@@ -28,13 +28,15 @@ R Package	Versions
 
 *  **Cytoscape** 3.8.0 or higher (Optional; If you are only interested in viewing network session file of Cytoscape)
 
-*  **Sun Java SDK 7 or higher ** (Optional; Dependency of Cytoscape; https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
+*  **Java SDK** 8 or higher (https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
 
 Setting JAVA_HOME may also be needed to launch Java at any folders(see http://www.sajeconsultants.com/how-to-set-java_home-on-mac-os-x/?utm_source=rss&utm_medium=rss&utm_campaign=how-to-set-java_home-on-mac-os-x).
 
 Bioconda users may also try 'conda install -c bioconda java-jdk' to install Java easily.
 
 ## Usages
+
+### Figure and table generation
 
 Take Fig1_AB_code.R in folder Figure_1 for an example.
 
@@ -55,6 +57,10 @@ Under session> Set Working directory> Choose directory... to change to Figure_1 
 Option 4. Batch mode
 
 We also provide a convenient executable script (**script_batch**) for running R codes in a batch mode. Please set permission (i.e. chmod a+x script_batch) before executing it.
+
+### Processing data to generate feature profile
+
+See Data_processing folder
 
 ## Layout of the website
 <br/>
