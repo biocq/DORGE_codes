@@ -1,6 +1,6 @@
 # Codes used in the DORGE paper
 ![image](https://github.com/biocq/DORGE/blob/master/DORGE_logo.svg)
-### Codes for reproducing the results of the paper
+## Codes for reproducing the results of the paper
 Codes and necessary data used in the DORGE paper for generating figures and tables are available at this website.
 
 ## Dependency
@@ -36,7 +36,7 @@ Bioconda users may also try 'conda install -c bioconda java-jdk' to install Java
 
 ## Usages
 
-### Figure and table generation
+### Figures/tables generation
 
 Take Fig1_AB_code.R in folder Figure_1 for an example.
 
@@ -60,7 +60,7 @@ We also provide a convenient executable script (**script_batch**) for running R 
 
 ### Processing data to generate feature profile
 
-See Data_processing folder
+Instructions are included in Data_processing folder
 
 ## Layout of the website
 <br/>
