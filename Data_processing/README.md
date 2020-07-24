@@ -54,9 +54,6 @@ The layout of data folders is expected:
 
 &nbsp;&nbsp;&nbsp;&nbsp;|- github_feature_combination.java
 
-|- **DORGE_codes** (folder containing codes and data for reproducing figures and tables in the DORGE paper; https://github.com/biocq/DORGE_codes)
-
-
 **2. Go to individual folders under DORGE_pipeline and follow the instructions (README.md) to run the codes for specific feature categories.**
 
 **3. Code for combining features**
