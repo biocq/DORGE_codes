@@ -1,0 +1,33 @@
+cd /Users/jlyu/Box\ Sync/TSGOG_Project/SA_sub/github/DORGE_paper/DORGE_codes/Data_processing
+mkdir -p Gene_annotation
+mkdir -p Mutation_processing
+mkdir -p Epigenetics_processing
+mkdir -p Genomics_processing
+mkdir -p Phenotype_processing
+mkdir -p Features
+
+yes | cp -rf ../../DORGE_data_processing_pipeline/README.md .
+
+yes | cp -rf ../../DORGE_data_processing_pipeline/github_feature_combination.java .
+
+cd Features
+yes | cp -rf ../../../DORGE_data_processing_pipeline/Features/All_features.csv .
+yes | cp -rf ../../../DORGE_data_processing_pipeline/Features/feature_subset_generation.R .
+yes | cp -rf ../../../DORGE_data_processing_pipeline/Features/README.md .
+yes | cp -rf ../../../DORGE_data_processing_pipeline/Features/All_features_training.csv .
+cd ..
+cd Gene_annotation
+yes | cp -rf ../../../DORGE_data_processing_pipeline/Gene_annotation/README.md .
+cd ..
+cd Mutation_processing
+yes | cp -rf ../../../DORGE_data_processing_pipeline/Mutation_processing/README.md .
+cd ..
+cd Epigenetics_processing
+yes | cp -rf ../../../DORGE_data_processing_pipeline/Epigenetics_processing/README.md .
+cd ..
+cd Genomics_processing
+yes | cp -rf ../../../DORGE_data_processing_pipeline/Genomics_processing/README.md .
+cd ..
+cd Phenotype_processing
+yes | cp -rf ../../../DORGE_data_processing_pipeline/Phenotype_processing/README.md .
+cd ..

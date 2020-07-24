@@ -59,37 +59,45 @@ We also provide a convenient executable script (**script_batch**) for running R 
 ## Layout of the website
 <br/>
 |-Figure_1<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Raw_figures                        Unprocessed raw figures related to Figure 1 and Figure S1<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---data					                      Processed data used for figure generation<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Figure_1.pdf                       Assembled Figure 1<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Figure S1 related to Figure 1.pdf  Assembled Figure S1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Raw_figures                        			Unprocessed raw figures related to Figure 1 and Figure S1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---data			                      		Processed data used for figure generation<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Figure_1.pdf                       			Assembled Figure 1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Figure S1 related to Figure 1.pdf  			Assembled Figure S1<br/>
 |-Figure_2<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Raw_figures                        Unprocessed raw figures related to Figure 2 and Figure S3<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---data					                      Processed data used for figure generation<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Figure_2.pdf                       Assembled Figure 2<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Figure S3 related to Figure 2.pdf  Assembled Figure S3<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Raw_figures                        			Unprocessed raw figures related to Figure 2 and Figure S3<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---data			                      		Processed data used for figure generation<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Figure_2.pdf                       			Assembled Figure 2<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Figure S3 related to Figure 2.pdf  			Assembled Figure S3<br/>
 |-Figure_3<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Raw_figures                        Unprocessed raw figures related to Figure 3 and Figure S4<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---data					                      Processed data used for figure generation<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Figure_3.pdf                       Assembled Figure 3<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Figure S4 related to Figure 3.pdf  Assembled Figure S4<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Raw_figures                        			Unprocessed raw figures related to Figure 3 and Figure S4<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---data			                      		Processed data used for figure generation<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Figure_3.pdf                       			Assembled Figure 3<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Figure S4 related to Figure 3.pdf  			Assembled Figure S4<br/>
 |-Figure_4<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Raw_figures                        Unprocessed raw figures related to Figure 4 and Figure S5-S6<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---data					                      Processed data used for figure generation<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Figure_4.pdf                       Assembled Figure 4<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Figure S5 related to Figure 4.pdf  Assembled Figure S5<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Figure S6 related to Figure 4.pdf  Assembled Figure S6<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Raw_figures                        			Unprocessed raw figures related to Figure 4 and Figure S5-S6<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---data			                      		Processed data used for figure generation<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Figure_4.pdf                       			Assembled Figure 4<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Figure S5 related to Figure 4.pdf  			Assembled Figure S5<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Figure S6 related to Figure 4.pdf  			Assembled Figure S6<br/>
 |-Tables<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Data_file_S1                       Raw tables that are used to make the final Data file S1<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Data_file_S2                       Raw tables that are used to make the final Data file S2<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Table_1                            Raw table of Table 1<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Data file S1.xlsx                  The final Data file S1<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;|---Data file S2.xlsx                  The final Data file S2<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Data_file_S1                       			Raw tables that are used to make the final Data file S1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Data_file_S2                       			Raw tables that are used to make the final Data file S2<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Table_1                            			Raw table of Table 1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Data file S1.xlsx                  			The final Data file S1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Data file S2.xlsx                  			The final Data file S2<br/>
+|-Data_processing<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Epigenetics_processing             			Instruction of epigenetic data processing<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Features		            			 			Included combined feature profiles and codes to filter features<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Gene_annotation             			 			Instruction of gene annotation processing<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Genomics_processing             	 			Instruction of genomics data processing<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Mutation_processing             	 			Instruction of mutational data processing<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---Phenotype_processing             	 			Instruction of phenotype data processing<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|---github_feature_combination.java    			Java program to combine features<br/>
 
-script_batch				                    A convenient executable script (script_batch) for running R codes in a batch mode<br/>
-Gene_set_new.txt		                    Gene annotation file through the paper<br/>
-DORGE_prediction.txt                    DORGE prediction results<br/>
-All_features.csv                        The feature profile<br/>
+script_batch		                    								A convenient executable script (script_batch) for running R codes in a batch mode<br/>
+Gene_set_new.txt		                    								Gene annotation file through the paper<br/>
+DORGE_prediction.txt                    								DORGE prediction results<br/>
+All_features.csv                        								The feature profile<br/>
 
 ## Citation
 
