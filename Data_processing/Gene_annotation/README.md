@@ -1,5 +1,4 @@
-# Codes used for Gene annotation
-
+# Codes used for gene annotation
 
 ## Codes to annotate genes can be found at:
 

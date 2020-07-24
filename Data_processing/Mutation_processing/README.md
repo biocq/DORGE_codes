@@ -1,4 +1,4 @@
-## Codes used for mutation feature calculation
+## Codes used for Mutation feature calculation
 
 ## Codes to process Mutation data can be found at:
 

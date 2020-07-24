@@ -1,7 +1,5 @@
 # Codes used for Phenotype feature calculation
 
-
-  
 ## Codes to process Phenotype data can be found at:
 
 https://figshare.com/s/da23c6485dfde9632f73

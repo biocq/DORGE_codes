@@ -1,6 +1,6 @@
 # Codes used for Epigenetics feature calculation
 
-## Codes to process evaluation data can be found at:
+## Codes to process Epigenetics data can be found at:
 
 https://figshare.com/s/8b8fa54f490344c31620
 
