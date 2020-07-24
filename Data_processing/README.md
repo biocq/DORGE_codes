@@ -50,11 +50,11 @@ The layout of data folders that we expect:
   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--- Features (Including a script for generating training feature profile)
 
-&nbsp;&nbsp;&nbsp;&nbsp;|- github_feature_combination.java
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--- github_feature_combination.java
 
-**2. Go to individual folders under DORGE_pipeline and follow the instructions (README.md) to run the codes for specific feature categories.**
+**2. `cd` to individual folders under DORGE_pipeline and follow the instructions (README.md) to run the codes for specific feature categories.**
 
-**3. Code for combining features**
+**3. Script for combining features**
 ```
 javac github_feature_combination.java
 java github_feature_combination
@@ -70,7 +70,6 @@ cd ..
 ```
 
 Output: All_features_training.csv (Training feature profile including 75 features used for model training (https://github.com/biocq/DORGE))
-
 
 ## Changelog
 *  March 25. Update the scripts and fix bugs.
