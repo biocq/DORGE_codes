@@ -3,9 +3,7 @@
 
 
 ## Availability
-Codes and data used for processing data as well as outputs are available at Figshare website.
-
-Download Link: https://figshare.com/projects/DORGE_Discovery_of_Oncogenes_and_Tumor_SuppressoR_Genes_Using_Genetic_and_Epigenetic_Features/78249
+Codes and data used for processing data as well as outputs are available at Figshare website. See specific folders for details.
 
 ## Dependency
 
@@ -80,7 +78,7 @@ Output: All_features_training.csv (Training feature profile including 75 feature
 
 ## Citation
 
-Please cite the paper (DORGE: Discovery of Oncogenes and Tumor SuppressoR Genes Using Genetic and Epigenetic Features, now submitted to Science Advances) if the resources are used elsewhere.
+Please cite the paper (DORGE: Discovery of Oncogenes and Tumor SuppressoR Genes Using Genetic and Epigenetic Features, https://www.biorxiv.org/content/10.1101/2020.07.21.213702v1) if the resources are used elsewhere.
 
 
 ## Changelog
