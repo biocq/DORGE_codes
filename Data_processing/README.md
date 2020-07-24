@@ -1,4 +1,4 @@
-# Pipeline used to process data in the DORGE paper
+# Data processing used in the DORGE paper
 ![image](https://github.com/biocq/DORGE/blob/master/DORGE_logo.svg)
 
 
@@ -15,26 +15,26 @@ As a convenience way, Bioconda users may also try 'conda install -c bioconda jav
 
 
 ## Illustration
-The illustration of the pipeline is presented at individual folders, including:
+The illustration of the data processing is presented in individual folders, including:
 
-*  Gene_annotation (Gene annotation based on Ensembl, GENCODE, COSMIC and other resources)
-*  Epigenetics_processing (Pipeline for processing epigenetic datasets)
-*  Function_processing (Pipeline for processing function datasets)
-*  Genomics_processing (Pipeline for processing genomic datasets)
-*  Mutation_processing (Pipeline for processing mutation datasets)
-*  Phenotype_processing (Pipeline for processing phenotype datasets)
+*  Gene_annotation (Scripts for gene annotation based on Ensembl, GENCODE, COSMIC and other resources)
+*  Epigenetics_processing (Scripts for processing epigenetic datasets)
+*  Function_processing (Scripts for processing function datasets)
+*  Genomics_processing (Scripts for processing genomic datasets)
+*  Mutation_processing (Scripts for processing mutation datasets)
+*  Phenotype_processing (Scripts for processing phenotype datasets)
 *  Features (Including a script for generating training feature profile)
 
 
-The features can by combined by using github_feature_combination.java provided in this website.
+The features can by combined by using github_feature_combination.java provided here.
 
 ## Instructions
 
 **1. Download datasets and place in the proper hierarchy.**
 
-The layout of data folders is expected:
+The layout of data folders that we expect:
 
-|- **Data_processing** (folder containing codes and data for generating feature profiles used by the DORGE paper for model training and figure/tables generation)
+|- **Data_processing** (root folder)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--- Gene_annotation (Gene annotation based on Ensembl, GENCODE, COSMIC and other resources)
 
@@ -49,8 +49,6 @@ The layout of data folders is expected:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--- Phenotype_processing (Pipeline for processing phenotype datasets)
   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--- Features (Including a script for generating training feature profile)
-
-&nbsp;&nbsp;&nbsp;&nbsp;|--- Features (Including a script for generating training feature profile)
 
 &nbsp;&nbsp;&nbsp;&nbsp;|- github_feature_combination.java
 
@@ -71,17 +69,9 @@ Rscript feature_subset_generation.R
 cd ..
 ```
 
-Output: All_features_training.csv (Training feature profile including 75 features in the Features folder)
-
-## Citation
-
-Please cite the paper (DORGE: Discovery of Oncogenes and Tumor SuppressoR Genes Using Genetic and Epigenetic Features, https://www.biorxiv.org/content/10.1101/2020.07.21.213702v1) if the resources are used elsewhere.
+Output: All_features_training.csv (Training feature profile including 75 features used for model training (https://github.com/biocq/DORGE))
 
 
 ## Changelog
 *  March 25. Update the scripts and fix bugs.
 *  April 27. Update the README page.
-
-## Issues
-
-If you encounter any problems, please [file an issue](https://github.com/biocq/DORGE_pipeline/issues) along with a detailed description.
