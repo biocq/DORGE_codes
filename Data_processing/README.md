@@ -34,7 +34,7 @@ The features can by combined by using github_feature_combination.java provided i
 
 The layout of data folders is expected:
 
-|- **DORGE_pipeline** (folder containing codes and data for generating feature profiles used by the DORGE paper for model training and figure/tables generation)
+|- **Data_processing** (folder containing codes and data for generating feature profiles used by the DORGE paper for model training and figure/tables generation)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--- Gene_annotation (Gene annotation based on Ensembl, GENCODE, COSMIC and other resources)
 
