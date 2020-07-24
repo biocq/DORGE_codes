@@ -15,15 +15,14 @@ As a convenience way, Bioconda users may also try 'conda install -c bioconda jav
 
 
 ## Illustration
-The illustration of the data processing is presented in individual folders, including:
+The illustration of the data processing is presented in README.md file in individual folders, including:
 
-*  Gene_annotation (Scripts for gene annotation based on Ensembl, GENCODE, COSMIC and other resources)
-*  Epigenetics_processing (Scripts for processing epigenetic datasets)
-*  Function_processing (Scripts for processing function datasets)
-*  Genomics_processing (Scripts for processing genomic datasets)
-*  Mutation_processing (Scripts for processing mutation datasets)
-*  Phenotype_processing (Scripts for processing phenotype datasets)
-*  Features (Including a script for generating training feature profile)
+*  Gene_annotation/README.md
+*  Epigenetics_processing/README.md
+*  Genomics_processing/README.md
+*  Mutation_processing/README.md
+*  Phenotype_processing/README.md
+*  Features/README.md
 
 
 The features can by combined by using github_feature_combination.java provided here.
@@ -39,8 +38,6 @@ The layout of data folders that we expect:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--- Gene_annotation (Gene annotation based on Ensembl, GENCODE, COSMIC and other resources)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--- Epigenetics_processing (Pipeline for processing epigenetic datasets)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--- Function_processing (Pipeline for processing function datasets)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--- Genomics_processing (Pipeline for processing genomic datasets)
 

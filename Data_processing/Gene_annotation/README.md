@@ -1,7 +1,7 @@
 # Codes used for Gene annotation
 
 
-## Codes to process evaluation data can be found at:
+## Codes to annotate genes can be found at:
 
 https://figshare.com/s/00e9fd6341023a6b8770
 

@@ -1,6 +1,6 @@
 ## Codes used for mutation feature calculation
 
-## Codes to process evaluation data can be found at:
+## Codes to process Mutation data can be found at:
 
 https://figshare.com/s/fb7b1f4db437f3eb1536
 

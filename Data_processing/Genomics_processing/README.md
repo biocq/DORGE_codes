@@ -1,6 +1,6 @@
 # Codes used for Genomics feature calculation
 
-## Codes to process evaluation data can be found at:
+## Codes to process Genomics data can be found at:
 
 https://figshare.com/s/2e5c4a59673385545f6f
 

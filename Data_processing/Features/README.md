@@ -1,6 +1,6 @@
 # Codes used for training feature profile generation
 
-## Codes to process evaluation data can be found at:
+## Codes to process feature profile can be found at:
 
 https://figshare.com/s/0e7dc381deb8893ee8f6
 
