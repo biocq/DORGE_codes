@@ -58,9 +58,7 @@ Option 4. Batch mode
 
 We also provide a convenient executable script (**script_batch**) for running R codes in a batch mode. Please set permission (i.e. chmod a+x script_batch) before executing it.
 
-### Processing data to generate feature profile
 
-Instructions are included in Data_processing folder
 
 ## Layout of the website
 <br/>
