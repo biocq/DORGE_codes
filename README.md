@@ -26,7 +26,7 @@ R Package	Versions
 **scales**	1.1.0  
 **VennDiagram**	1.6.20  
 
-*  **Cytoscape** 3.8.0 or higher (Optional; If you are only interested in viewing network session file of Cytoscape)
+*  **Cytoscape** 3.8.0 or higher (Optional; If you are interested in viewing network session file of Cytoscape)
 
 *  **Java SDK** 8 or higher (https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
 
